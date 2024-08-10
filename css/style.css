@@ -1,0 +1,226 @@
+header, footer {
+    background: #1b1c1f !important;
+}
+
+header .contact-btn {
+    color: #ffbd59 !important;
+}
+
+header ul li {
+    position: relative;
+
+}
+
+header ul li::after {
+    content: "";
+    width: 0%;
+    height: 4px;
+    background: #ffbd59;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+header ul li:hover::after {
+    width: 90%;
+    transition: .3s all ease-in-out;
+}
+
+section#banner .swap-columns{
+    flex-direction: column-reverse;
+}
+
+section#banner .btn-hire {
+    background: #ffbd59
+}
+
+section#skills {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(#fff, #f0f1f3, #ced2d9)
+}
+
+section#skills h2,
+section#my-projects h2 {
+    position: relative;
+    padding: 1rem;
+}
+
+section#skills h2::after,
+section#my-projects h2::after {
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: #1b1c1f;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+section#skills .subtitle,
+section#my-projects .subtitle{
+    margin-bottom: 10rem;
+    display: block;
+}
+
+section#skills .subtitle span:nth-of-type(1) {
+    background: #E44D26;
+    border: 2px solid #b43a1c;
+    box-shadow: 2px 2px 0 #b43a1c;
+    color: #fff;
+}
+
+section#skills .subtitle span:nth-of-type(2) {
+    background: #1572B6;
+    border: 2px solid #115f96;
+    box-shadow: 2px 2px 0 #115f96; 
+    color: #fff;
+}
+
+section#skills .subtitle span:nth-of-type(3) {
+    background: #F7DF1E;
+    border: 2px solid #c1ad16;
+    box-shadow: 2px 2px 0 #c1ad16; 
+    color: #333;
+}
+
+section#skills .subtitle span:nth-of-type(4) {
+    background: #007ACC;
+    border: 2px solid #005b97;
+    box-shadow: 2px 2px 0 #005b97; 
+    color: #fff;
+}
+
+section#skills .subtitle span:nth-of-type(5) {
+    background: #8C8C8C;
+    border: 2px solid #656565;
+    box-shadow: 2px 2px 0 #656565; 
+    color: #333;
+}
+
+section#skills .subtitle span:nth-of-type(6) {
+    background: #DD0031;
+    border: 2px solid #c1002a;
+    box-shadow: 2px 2px 0 #c1002a; 
+    color: #fff;
+}
+
+section#skills .subtitle span:nth-of-type(7) {
+    background: #02569B;
+    border: 2px solid #014781;
+    box-shadow: 2px 2px 0 #014781; 
+    color: #fff;
+}
+
+section#skills .subtitle span:nth-of-type(8) {
+    background: #007396;
+    border: 2px solid #005670;
+    box-shadow: 2px 2px 0 #005670; 
+    color: #fff;
+}
+
+section#skills .subtitle span:nth-of-type(9) {
+    background: #6DB33F;
+    border: 2px solid #599332;
+    box-shadow: 2px 2px 0 #599332; 
+    color: #fff;
+}
+
+section#skills .subtitle span:nth-of-type(10) {
+    background: #F2C300;
+    border: 2px solid #cfa600;
+    box-shadow: 2px 2px 0 #cfa600; 
+    color: #fff;
+}
+
+section#skills .subtitle span:nth-of-type(11) {
+    background: #2496ED;
+    border: 2px solid #1f79bf;
+    box-shadow: 2px 2px 0 #1f79bf; 
+    color: #fff;
+}
+
+section#skills .subtitle span:nth-of-type(12) {
+    background: #FCC624;
+    border: 2px solid #ca9e1b;
+    box-shadow: 2px 2px 0 #ca9e1b; 
+    color: #fff;
+}
+
+section#skills .subtitle span:nth-of-type(13) {
+    background: #00618A;
+    border: 2px solid #004664;
+    box-shadow: 2px 2px 0 #004664; 
+    color: #fff;
+}
+
+section#skills .subtitle span:nth-of-type(14) {
+    background: #003545;
+    border: 2px solid #00232d;
+    box-shadow: 2px 2px 0 #00232d; 
+    color: #fff;
+}
+
+section#skills .subtitle span:nth-of-type(15) {
+    background: #D33833;
+    border: 2px solid #a12a26;
+    box-shadow: 2px 2px 0 #a12a26; 
+    color: #fff;
+}
+
+section#skills .subtitle span:nth-of-type(16) {
+    background: #E14F4F;
+    border: 2px solid #a73b3b;
+    box-shadow: 2px 2px 0 #a73b3b; 
+    color: #fff;
+}
+
+section#skills .subtitle span:nth-of-type(17) {
+    background: #005F73;
+    border: 2px solid #004553;
+    box-shadow: 2px 2px 0 #004553; 
+    color: #fff;
+}
+
+section#skills .subtitle span {
+    padding-inline: 4px;
+    border-radius: 3px;
+    line-height: 30px;
+    font-weight: bold;
+    margin-right: 3px;
+}
+
+section#skills .card {
+    height: 200px;
+}
+
+section#skills .img-skills {
+    position: absolute;
+    top: -50px;
+}
+
+section#my-projects {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(#ced2d9, #fff, #f0f1f3)
+}
+
+section#phase {
+    background-color: #1c62e7;
+}
+
+@media(min-width: 64em){
+    section#banner .swap-columns{
+        flex-direction: unset;
+    }
+    section#skills {
+        height: 100vh;
+    }
+    
+}

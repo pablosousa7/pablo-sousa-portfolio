@@ -1,0 +1,27 @@
+{
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "entity.name.function",
+        "settings": {
+          "foreground": "#6B9DD0",
+          "fontStyle": "bold" // Altere a cor para o código hexadecimal desejado
+        }
+      },
+      {
+        "scope": "keyword",
+        "settings": {
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": "variable",
+        "settings": {
+          "fontStyle": "bold"
+        }
+      }
+    ]
+  },
+  "java.compile.nullAnalysis.mode": "automatic",
+  "java.configuration.updateBuildConfiguration": "disabled",
+}
