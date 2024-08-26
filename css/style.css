@@ -68,6 +68,17 @@ section#my-projects .subtitle{
     display: block;
 }
 
+section#my-projects img{
+    border: 3px solid transparent;
+}
+
+
+section#my-projects img:hover{
+    border: 3px solid #2496ED;
+    transition: .2s all;
+    border-radius: 4px;
+}
+
 section#skills .subtitle span:nth-of-type(1) {
     background: #E44D26;
     border: 2px solid #b43a1c;
@@ -214,6 +225,23 @@ section#my-projects {
 section#phase {
     background-color: #1c62e7;
 }
+
+
+.language-switcher {
+    margin-left: auto; /* Alinha as bandeiras à direita */
+  }
+  
+  .language-switcher li {
+    display: inline-block;
+    margin-left: 10px;
+  }
+  
+  .language-switcher img {
+    width: 32px; /* Tamanho das bandeiras */
+    height: auto;
+    vertical-align: middle;
+  }
+  
 
 @media(min-width: 64em){
     section#banner .swap-columns{
