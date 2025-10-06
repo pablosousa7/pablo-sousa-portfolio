@@ -1,101 +1,144 @@
-// Troca de idiomas
-const ptBrButton = document.getElementById('pt-br');
-const enUsButton = document.getElementById('en-us');
+const TRANSLATIONS = {
+  'pt-br': {
+    title: "Pablo Sousa | Portfolio",
+    nav_inicio: "Início",
+    nav_skills: "Skills",
+    nav_projects: "Projetos",
+    nav_contact: `<span class="cta-icon-rocket-path"><i class="fa-duotone fa-rocket-launch text-white"></i></span> <span class="text-white">Contato</span>`,
+    banner_title: "Engenheiro de Software",
+    banner_intro: "Olá! Sou Pablo, especialista em sistemas robustos, segurança, integrações, cloud e automação.<br>Foco em resultados, eficiência e escalabilidade.<br><span class='fw-bold main-accent'>+10 anos entregando soluções de alto impacto para empresas.</span><br><br>",
+    banner_list1: `<i class="fa-solid fa-square-check diffs-icon"></i>Fullstack | DevOps | Cloud | Security`,
+    banner_list3: `<i class="fa-solid fa-square-check diffs-icon"></i>Consultoria e mentoria`,
+    banner_list2: `<i class="fa-solid fa-square-check diffs-icon"></i>Sempre ajudando o próximo`,
+    btn_hire: `<span class="cta-icon-rocket-path"><i class="fa-duotone fa-rocket-launch fs-3 main-accent"></i></span> <span class="section-title main-accent">Contratar</span>`,
+    skills_title: "Skills & Expertise",
+    skills_frontend: "React, Angular, Flutter, TypeScript, HTML5, CSS3, JavaScript, jQuery, Bootstrap",
+    skills_backend: "Java(8, 11, 17, 21, 24), Spring Boot, Node.js, PHP, Quarkus",
+    skills_devops: "Docker, Linux, OpenShift, CI/CD, Cyber Security, Jenkins, Grafana, Terraform, Kafka",
+    skills_db: "MySQL, MariaDB, MongoDB,Postgres",
+    skills_cloud: "AWS, EC2, S3, RDS, IAM, SQS, SNS",
+    skills_gestao: "kanban, Scrum",
+    diffs_title: "Diferenciais",
+    diffs1: `<i class="fa-solid fa-webhook diffs-icon"></i> Infraestrutura como código e automação total`,
+    diffs2: `<i class="fa-duotone fa-chart-mixed diffs-icon"></i> Projetos escaláveis, seguros, monitorados e auditados`,
+    diffs3: `<i class="fa-duotone fa-people-group diffs-icon"></i> Coperação ágil entre times de desenvolvimento, operações e negócio`,
+    diffs4: `<i class="fa-duotone fa-laptop-code diffs-icon"></i> Documentação, compliance e governança técnica`,
+    diffs6: `<i class="fa-duotone fa-code diffs-icon"></i> Boas práticas: Clean Code, SOLID, Clean Architecture, MVC`,
+    diffs7: `<i class="fa-duotone fa-shield-check diffs-icon"></i> Spring Security, Kafka Security`,
+    diffs8: `<i class="fa-duotone fa-bug diffs-icon"></i> TDD, DDD, Junit, Jasmine`,
+    diffs9: `<i class="fa-duotone fa-certificate diffs-icon"></i> Certificação internacional em ETH`,
+    projects_title: "Projetos Pessoais",
+    proj_clippertimer_title: "ClipperTimer, App de gestão de barbearia e salões",
+    proj_clippertimer_desc: "ClipperTimer é um aplicativo que desenvolvi ao longo de quase dois anos, com o objetivo de oferecer uma experiência de usuário simplificada e eficiente, centrada em classificações.",
+    proj_medlyx_title: "Medlyx, App para clínica e hospital",
+    proj_medlyx_desc: "App para desktop e mobile, focado em hospitais e clínicas. Facilita o gerenciamento de atendimentos, consultas, controle de estoque, finanças e equipes, promovendo operações mais eficientes e organizadas. E também um sistema de engine gráfica feita em c++ para ajudar médicos em suas análises. (ainda em desenvolvimento)",
+    proj_zenithpos_title: "ZenithPOS, Sistema de Ponto de Venda",
+    proj_zenithpos_desc: "Sistema desktop robusto para varejo, gerencia vendas, estoque, cadastros e integra com TEF (maquininha de cartão), focando em interface de usuário eficiente e funcionalidades avançadas.",
+    contact_title: "Contato",
+    contact_lead: "Vamos conversar sobre projetos, consultoria, mentoria ou parceria? <br><br><i class='fa-duotone fa-envelope main-accent'></i> <span class='fw-bold'>prsousa730@gmail.com</span>",
+    contact_available: "Disponível para:",
+    contact1: `<i class="fa-duotone fa-briefcase main-accent"></i> Freelance, projetos corporativos, consultoria técnica, CLT full-time remote, PJ full-time remote`,
+    footer: "© 2025 Pablo Sousa"
+  },
+  'en-us': {
+    title: "Pablo Sousa | Portfolio",
+    nav_inicio: "Home",
+    nav_skills: "Skills",
+    nav_projects: "Projects",
+    nav_contact: `<span class="cta-icon-rocket-path"><i class="fa-duotone fa-rocket-launch text-white"></i></span> <span class="text-white">Contact</span>`,
+    banner_title: "Software Engineer",
+    banner_intro: "Hello! I'm Pablo, a specialist in robust systems, security, integrations, cloud and automation.<br>Focused on results, efficiency and scalability.<br><span class='fw-bold main-accent'>+10 years delivering high-impact solutions for companies.</span><br><br>",
+    banner_list1: `<i class="fa-solid fa-square-check diffs-icon"></i>Fullstack | DevOps | Cloud | Security`,
+    banner_list3: `<i class="fa-solid fa-square-check diffs-icon"></i>Consulting & Mentoring`,
+    banner_list2: `<i class="fa-solid fa-square-check diffs-icon"></i>Always helping others`,
+    btn_hire: `<span class="cta-icon-rocket-path"><i class="fa-duotone fa-rocket-launch fs-3 main-accent"></i></span> <span class="section-title main-accent">Hire</span>`,
+    skills_title: "Skills & Expertise",
+    skills_frontend: "React, Angular, Flutter, TypeScript, HTML5, CSS3, JavaScript, jQuery, Bootstrap",
+    skills_backend: "Java(8, 11, 17, 21, 24), Spring Boot, Node.js, PHP, Quarkus",
+    skills_devops: "Docker, Linux, OpenShift, CI/CD, Cyber Security, Jenkins, Grafana, Terraform, Kafka",
+    skills_db: "MySQL, MariaDB, MongoDB, Postgres",
+    skills_cloud: "AWS, EC2, S3, RDS, IAM, SQS, SNS",
+    skills_gestao: "Kanban, Scrum",
+    diffs_title: "Differentials",
+    diffs1: `<i class="fa-solid fa-webhook diffs-icon"></i> Infrastructure as code and full automation`,
+    diffs2: `<i class="fa-duotone fa-chart-mixed diffs-icon"></i> Scalable, secure, monitored and audited projects`,
+    diffs3: `<i class="fa-duotone fa-people-group diffs-icon"></i> Agile cooperation between development, operations and business teams`,
+    diffs4: `<i class="fa-duotone fa-laptop-code diffs-icon"></i> Documentation, compliance and technical governance`,
+    diffs6: `<i class="fa-duotone fa-code diffs-icon"></i> Best practices: Clean Code, SOLID, Clean Architecture, MVC`,
+    diffs7: `<i class="fa-duotone fa-shield-check diffs-icon"></i> Spring Security, Kafka Security`,
+    diffs8: `<i class="fa-duotone fa-bug diffs-icon"></i> TDD, DDD, Junit, Jasmine`,
+    diffs9: `<i class="fa-duotone fa-certificate diffs-icon"></i> International ETH certification`,
+    projects_title: "Personal Projects",
+    proj_clippertimer_title: "ClipperTimer, Barber Shop & Salon Management App",
+    proj_clippertimer_desc: "ClipperTimer is an app I developed over almost two years, with the aim of providing a simplified and efficient user experience focused on ratings.",
+    proj_medlyx_title: "Medlyx, Clinic & Hospital App",
+    proj_medlyx_desc: "Desktop and mobile app focused on hospitals and clinics. Facilitates management of appointments, consultations, inventory, finances, and teams, promoting more efficient and organized operations. Also includes a graphics engine system made in C++ to help doctors with their analyses. (still in development)",
+    proj_zenithpos_title: "ZenithPOS, Point of Sale System",
+    proj_zenithpos_desc: "Robust desktop system for retail, manages sales, inventory, registrations, and integrates with TEF (card machine), focusing on efficient user interface and advanced features.",
+    contact_title: "Contact",
+    contact_lead: "Let's talk about projects, consulting, mentoring or partnership? <br><br><i class='fa-duotone fa-envelope main-accent'></i> <span class='fw-bold'>prsousa730@gmail.com</span>",
+    contact_available: "Available for:",
+    contact1: `<i class="fa-duotone fa-briefcase main-accent"></i> Freelance, corporate projects, technical consulting, Full-time remote CLT, Full-time remote PJ`,
+    footer: "© 2025 Pablo Sousa"
+  }
+};
 
-ptBrButton.addEventListener('click', () => {
-  traduzirParaPortugues();
-});
+function translatePage(lang) {
+  const t = TRANSLATIONS[lang];
 
-enUsButton.addEventListener('click', () => {
-  traduzirParaIngles();
-});
+  document.title = t.title;
+  document.querySelector('[data-translate="nav_inicio"]').innerHTML = t.nav_inicio;
+  document.querySelector('[data-translate="nav_skills"]').innerHTML = t.nav_skills;
+  document.querySelector('[data-translate="nav_projects"]').innerHTML = t.nav_projects;
+  document.querySelector('[data-translate="nav_contact"]').innerHTML = t.nav_contact;
 
-function traduzirParaPortugues() {
-  // Header
-  document.querySelector('title').textContent = 'Pablo Sousa | Portfólio';
-  document.querySelector('meta[name="description"]').setAttribute('content', 'Portfólio de Pablo Sousa, Engenheiro de Software com mais de 7 anos de experiência em tecnologias Front-end, Back-end e segurança cibernética. Confira meus projetos e habilidades.');
-  document.querySelector('meta[property="og:description"]').setAttribute('content', 'Portfólio de Pablo Sousa, um experiente Engenheiro de Software especializado em tecnologias Front-end e Back-end, segurança cibernética e muito mais. Veja meus projetos e habilidades.');
-  document.querySelector('meta[property="og:title"]').setAttribute('content', 'Pablo Sousa | Portfólio');
-  document.querySelector('header .nav-link[href="#banner"]').textContent = 'Início';
-  document.querySelector('header .nav-link[href="#skills"]').textContent = 'Skills';
-  document.querySelector('header .nav-link[href="#my-projects"]').textContent = 'Projetos';
-  document.querySelector('header .nav-link[href="#contact"]').textContent = 'Contato';
+  document.querySelector('[data-translate="banner_title"]').innerHTML = t.banner_title;
+  document.querySelector('[data-translate="banner_intro"]').innerHTML = t.banner_intro;
+  document.getElementById('banner-list1').innerHTML = t.banner_list1;
+  document.getElementById('banner-list2').innerHTML = t.banner_list2;
+  document.getElementById('banner-list3').innerHTML = t.banner_list3;
 
-  // Banner
-  document.querySelector('#banner p').innerHTML = 'Olá visitante,<br><br> Sou <b class="fs-4">Pablo</b>, um Engenheiro de Software com mais de 7 anos de experiência em tecnologias Front-end, Back-end e integração contínua, apaixonado por unir desenvolvimento de software e práticas de segurança cibernética. Sempre buscando <b class="fs-4">aprendizado</b> e <b class="fs-4">crescimento</b>, meu sonho é prosperar na Europa ou nos EUA.<br/><br/><i>E, entre nós, nunca tirem o home office, por favor <span class="fs-4">—</span> ele é a nossa inspiração diária!</i>';
-  document.querySelector('#banner .btn-hire').textContent = 'Contratar';
+  document.querySelector('.btn-cta-rocket').innerHTML = t.btn_hire;
 
-  // Skills
-  document.querySelector('#skills h2').textContent = 'Minhas Habilidades';
-  document.querySelector('#skills .subtitle').innerHTML = 'Minhas habilidades incluem um mix poderoso de tecnologias, desde <span>HTML5</span> e <span>CSS3</span> até <span>JavaScript</span><b>,</b> <span>TypeScript</span> e <span>PHP</span>. Sou fluente em frameworks como <span>Angular</span> e <span>Flutter</span><b>,</b> e manjo de <span>Java</span> <span>Spring Boot</span> e <span>Quarkus</span>. Também sou versado em <span>Docker</span><b>,</b> <span>Linux</span><b>,</b> <span>MySQL</span><b>,</b> <span>MariaDB</span><b>,</b> <span>CI/CD</span> e <span>OpenShift</span><b>,</b> com um toque de <span>segurança cibernética</span>. Em resumo, sou um desenvolvedor apaixonado que adora explorar novas tecnologias e encontrar soluções criativas.';
-  document.querySelectorAll('.skill-title')[0].textContent = 'Front-end';
-  document.querySelectorAll('.skill-title')[1].textContent = 'Back-end';
-  document.querySelectorAll('.skill-title')[2].textContent = 'DevOps & Segurança';
-  document.querySelectorAll('.skill-title')[3].textContent = 'Banco de Dados';
+  document.querySelector('[data-translate="skills_title"]').innerHTML = t.skills_title;
+  document.getElementById('skills-frontend').innerHTML = t.skills_frontend;
+  document.getElementById('skills-backend').innerHTML = t.skills_backend;
+  document.getElementById('skills-devops').innerHTML = t.skills_devops;
+  document.getElementById('skills-db').innerHTML = t.skills_db;
+  document.getElementById('skills-cloud').innerHTML = t.skills_cloud;
+  document.getElementById('skills-gestao').innerHTML = t.skills_gestao;
 
-  // Projects
-  document.querySelector('#my-projects h2').textContent = 'Meus Projetos';
-  document.querySelector('#my-projects .subtitle').innerHTML = 'Explore minhas aventuras tecnológicas! 🚀 Desde criar aplicações que tornam o mundo mais digital até resolver problemas com soluções elegantes e criativas, meus projetos são verdadeiros campos de batalha para inovações.';
+  document.querySelector('[data-translate="diffs_title"]').innerHTML = t.diffs_title;
+  document.getElementById('diffs1').innerHTML = t.diffs1;
+  document.getElementById('diffs2').innerHTML = t.diffs2;
+  document.getElementById('diffs3').innerHTML = t.diffs3;
+  document.getElementById('diffs4').innerHTML = t.diffs4;
+  document.getElementById('diffs6').innerHTML = t.diffs6;
+  document.getElementById('diffs7').innerHTML = t.diffs7;
+  document.getElementById('diffs8').innerHTML = t.diffs8;
+  document.getElementById('diffs9').innerHTML = t.diffs9;
 
-  // Phase
-  document.querySelector('#phase h2').innerHTML = '<i class="fa-solid fa-quote-left opacity-25"></i> A única maneira de fazer um ótimo trabalho é amar o que você faz.<i class="fa-solid fa-quote-right opacity-25"></i>';
-  document.querySelector('#phase p').textContent = '- Steve Jobs';
+  document.getElementById('projects-title').innerHTML = t.projects_title;
+  document.getElementById('proj-clippertimer-title').innerHTML = t.proj_clippertimer_title;
+  document.getElementById('proj-clippertimer-desc').innerHTML = t.proj_clippertimer_desc;
+  document.getElementById('proj-medlyx-title').innerHTML = t.proj_medlyx_title;
+  document.getElementById('proj-medlyx-desc').innerHTML = t.proj_medlyx_desc;
+  document.getElementById('proj-zenithpos-title').innerHTML = t.proj_zenithpos_title;
+  document.getElementById('proj-zenithpos-desc').innerHTML = t.proj_zenithpos_desc;
 
-  // Contact
-  document.querySelector('#contact h2').textContent = 'Contato';
-  document.querySelector('#contact p').innerHTML = '<img src="./assets/email.png" alt="Email" width="30"> <a href="mailto:prsousa730@gmail.com" class="text-dark fs-5">prsousa730@gmail.com</a>';
-  document.querySelector('#contact span').textContent = 'Faça já seu Orçamento de Graça';
+  document.getElementById('contact-title').innerHTML = t.contact_title;
+  document.getElementById('contact-lead').innerHTML = t.contact_lead;
+  document.getElementById('contact-available').innerHTML = t.contact_available;
+  document.getElementById('contact1').innerHTML = t.contact1;
 
-  // Footer
-  document.querySelector('footer p').innerHTML = 'Todos os direitos reservados - Copyright © 2024';
-
-  // Opportunity
-  document.querySelector('#opportunity').textContent = 'OPORTUNIDADE';
-
-  
+  document.getElementById('footer').innerHTML = t.footer;
 }
 
-function traduzirParaIngles() {
-  // Header
-  document.querySelector('title').textContent = 'Pablo Sousa | Portfolio';
-  document.querySelector('meta[name="description"]').setAttribute('content', 'Portfolio of Pablo Sousa, Software Engineer with over 7 years of experience in Front-end, Back-end, and cybersecurity technologies. Check out my projects and skills.');
-  document.querySelector('meta[property="og:description"]').setAttribute('content', 'Portfolio of Pablo Sousa, an experienced Software Engineer specializing in Front-end and Back-end technologies, cybersecurity, and more. See my projects and skills.');
-  document.querySelector('meta[property="og:title"]').setAttribute('content', 'Pablo Sousa | Portfolio');
-  document.querySelector('header .nav-link[href="#banner"]').textContent = 'Home';
-  document.querySelector('header .nav-link[href="#skills"]').textContent = 'Skills';
-  document.querySelector('header .nav-link[href="#my-projects"]').textContent = 'Projects';
-  document.querySelector('header .nav-link[href="#contact"]').textContent = 'Contact';
-
-  // Banner
-  document.querySelector('#banner p').innerHTML = 'Hello visitor,<br><br> I am <b class="fs-4">Pablo</b>, a Software Engineer with over 7 years of experience in Front-end, Back-end, and continuous integration technologies, passionate about combining software development and cybersecurity practices. Always seeking <b class="fs-4">learning</b> and <b class="fs-4">growth</b>, my dream is to thrive in Europe or the US.<br/><br/><i>And, between us, please never take away remote work <span class="fs-4">—</span> it’s our daily inspiration!</i>';
-  document.querySelector('#banner .btn-hire').textContent = 'Hire Me';
-
-  // Skills
-  document.querySelector('#skills h2').textContent = 'My Skills';
-  document.querySelector('#skills .subtitle').innerHTML = 'My skills include a powerful mix of technologies, from <span>HTML5</span> and <span>CSS3</span> to <span>JavaScript</span><b>,</b> <span>TypeScript</span> and <span>PHP</span>. I’m fluent in frameworks like <span>Angular</span> and <span>Flutter</span><b>,</b> and proficient in <span>Java</span> <span>Spring Boot</span> and <span>Quarkus</span>. I’m also well-versed in <span>Docker</span><b>,</b> <span>Linux</span><b>,</b> <span>MySQL</span><b>,</b> <span>MariaDB</span><b>,</b> <span>CI/CD</span> and <span>OpenShift</span><b>,</b> with a touch of <span>cybersecurity</span>. In short, I’m a passionate developer who loves exploring new technologies and finding creative solutions.';
-  document.querySelectorAll('.skill-title')[0].textContent = 'Front-end';
-  document.querySelectorAll('.skill-title')[1].textContent = 'Back-end';
-  document.querySelectorAll('.skill-title')[2].textContent = 'DevOps & Security';
-  document.querySelectorAll('.skill-title')[3].textContent = 'Database';
-
-  // Projects
-  document.querySelector('#my-projects h2').textContent = 'My Projects';
-  document.querySelector('#my-projects .subtitle').innerHTML = 'Explore my technological adventures! 🚀 From creating applications that make the world more digital to solving problems with elegant and creative solutions, my projects are true battlegrounds for innovations.';
-
-  // Phase
-  document.querySelector('#phase h2').innerHTML = '<i class="fa-solid fa-quote-left opacity-25"></i> The only way to do great work is to love what you do.<i class="fa-solid fa-quote-right opacity-25"></i>';
-  document.querySelector('#phase p').textContent = '- Steve Jobs';
-
-  // Contact
-  document.querySelector('#contact h2').textContent = 'Contact';
-  document.querySelector('#contact p').innerHTML = '<img src="./assets/email.png" alt="Email" width="30"> <a href="mailto:prsousa730@gmail.com" class="text-dark fs-5">prsousa730@gmail.com</a>';
-  document.querySelector('#contact span').textContent = 'Get your free quote now';
-
-  // Footer
-  document.querySelector('footer p').innerHTML = 'All rights reserved - Copyright © 2024';
-
-  // Opportunity
-  document.querySelector('#opportunity').textContent = 'OPPORTUNITY';
-}
-
-
+document.getElementById('pt-br').addEventListener('click', function(e){
+  e.preventDefault();
+  translatePage('pt-br');
+});
+document.getElementById('en-us').addEventListener('click', function(e){
+  e.preventDefault();
+  translatePage('en-us');
+});
