@@ -11,11 +11,16 @@ const TRANSLATIONS = {
     banner_list3: `<i class="fa-solid fa-square-check diffs-icon"></i>Consultoria e mentoria`,
     banner_list2: `<i class="fa-solid fa-square-check diffs-icon"></i>Sempre ajudando o próximo`,
     btn_hire: `<span class="cta-icon-rocket-path"><i class="fa-duotone fa-rocket-launch fs-3 main-accent"></i></span> <span class="section-title main-accent">Contratar</span>`,
+    value1: `<i class="fa-duotone fa-shield-halved"></i> Segurança é prioridade`,
+    value2: `<i class="fa-duotone fa-briefcase"></i> Seriedade e responsabilidade`,
+    value3: `<i class="fa-duotone fa-award"></i> Excelência comprovada`,
+    value4: `<i class="fa-duotone fa-handshake"></i> Transparência e parceria`,
+    value5: `<i class="fa-duotone fa-user-check"></i> Compromisso com resultados`,
     skills_title: "Skills & Expertise",
     skills_frontend: "React, Angular, Flutter, TypeScript, HTML5, CSS3, JavaScript, jQuery, Bootstrap",
     skills_backend: "Java(8, 11, 17, 21, 24), Spring Boot, Node.js, PHP, Quarkus",
     skills_devops: "Docker, Linux, OpenShift, CI/CD, Cyber Security, Jenkins, Grafana, Terraform, Kafka",
-    skills_db: "MySQL, MariaDB, MongoDB,Postgres",
+    skills_db: "MySQL, MariaDB, MongoDB, Postgres",
     skills_cloud: "AWS, EC2, S3, RDS, IAM, SQS, SNS",
     skills_gestao: "kanban, Scrum",
     diffs_title: "Diferenciais",
@@ -52,6 +57,11 @@ const TRANSLATIONS = {
     banner_list3: `<i class="fa-solid fa-square-check diffs-icon"></i>Consulting & Mentoring`,
     banner_list2: `<i class="fa-solid fa-square-check diffs-icon"></i>Always helping others`,
     btn_hire: `<span class="cta-icon-rocket-path"><i class="fa-duotone fa-rocket-launch fs-3 main-accent"></i></span> <span class="section-title main-accent">Hire</span>`,
+    value1: `<i class="fa-duotone fa-shield-halved"></i> Security is a priority`,
+    value2: `<i class="fa-duotone fa-briefcase"></i> Seriousness and responsibility`,
+    value3: `<i class="fa-duotone fa-award"></i> Proven excellence`,
+    value4: `<i class="fa-duotone fa-handshake"></i> Transparency and partnership`,
+    value5: `<i class="fa-duotone fa-user-check"></i> Commitment to results`,
     skills_title: "Skills & Expertise",
     skills_frontend: "React, Angular, Flutter, TypeScript, HTML5, CSS3, JavaScript, jQuery, Bootstrap",
     skills_backend: "Java(8, 11, 17, 21, 24), Spring Boot, Node.js, PHP, Quarkus",
@@ -70,15 +80,15 @@ const TRANSLATIONS = {
     diffs9: `<i class="fa-duotone fa-certificate diffs-icon"></i> International ETH certification`,
     projects_title: "Personal Projects",
     proj_clippertimer_title: "ClipperTimer, Barber Shop & Salon Management App",
-    proj_clippertimer_desc: "ClipperTimer is an app I developed over almost two years, with the aim of providing a simplified and efficient user experience focused on ratings.",
+    proj_clippertimer_desc: "ClipperTimer is an app I developed over almost two years, aiming to provide a simplified and efficient user experience, focused on ratings.",
     proj_medlyx_title: "Medlyx, Clinic & Hospital App",
-    proj_medlyx_desc: "Desktop and mobile app focused on hospitals and clinics. Facilitates management of appointments, consultations, inventory, finances, and teams, promoting more efficient and organized operations. Also includes a graphics engine system made in C++ to help doctors with their analyses. (still in development)",
+    proj_medlyx_desc: "Desktop and mobile app focused on hospitals and clinics. Facilitates management of appointments, consultations, inventory, finances and teams, promoting more efficient and organized operations. Also includes a graphics engine system made in C++ to help doctors with their analyses. (still in development)",
     proj_zenithpos_title: "ZenithPOS, Point of Sale System",
-    proj_zenithpos_desc: "Robust desktop system for retail, manages sales, inventory, registrations, and integrates with TEF (card machine), focusing on efficient user interface and advanced features.",
+    proj_zenithpos_desc: "Robust desktop system for retail, manages sales, inventory, registrations and integrates with TEF (card machine), focusing on efficient user interface and advanced features.",
     contact_title: "Contact",
     contact_lead: "Let's talk about projects, consulting, mentoring or partnership? <br><br><i class='fa-duotone fa-envelope main-accent'></i> <span class='fw-bold'>prsousa730@gmail.com</span>",
     contact_available: "Available for:",
-    contact1: `<i class="fa-duotone fa-briefcase main-accent"></i> Freelance, corporate projects, technical consulting, Full-time remote CLT, Full-time remote PJ`,
+    contact1: `<i class="fa-duotone fa-briefcase main-accent"></i> Freelance, corporate projects, technical consulting, full-time remote CLT, full-time remote PJ`,
     footer: "© 2025 Pablo Sousa"
   }
 };
@@ -99,6 +109,13 @@ function translatePage(lang) {
   document.getElementById('banner-list3').innerHTML = t.banner_list3;
 
   document.querySelector('.btn-cta-rocket').innerHTML = t.btn_hire;
+
+  // Valores robustos
+  document.getElementById('value1').innerHTML = t.value1;
+  document.getElementById('value2').innerHTML = t.value2;
+  document.getElementById('value3').innerHTML = t.value3;
+  document.getElementById('value4').innerHTML = t.value4;
+  document.getElementById('value5').innerHTML = t.value5;
 
   document.querySelector('[data-translate="skills_title"]').innerHTML = t.skills_title;
   document.getElementById('skills-frontend').innerHTML = t.skills_frontend;
