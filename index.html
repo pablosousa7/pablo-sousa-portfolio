@@ -1,215 +1,357 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pablo Sousa | Portfolio</title>
   <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/style.css">
-
-  <meta name="description" content="Portfólio de Pablo Sousa, Engenheiro de Software com mais de 7 anos de experiência em tecnologias Front-end, Back-end e segurança cibernética. Confira meus projetos e habilidades.">
-  <meta name="keywords" content="Pablo Sousa, Engenheiro de Software, Desenvolvimento Web, Front-end, Back-end, Segurança Cibernética, Portfólio, Projetos, Habilidades">
-  <meta property="og:title" content="Pablo Sousa | Portfolio">
-  <meta property="og:description" content="Portfólio de Pablo Sousa, um experiente Engenheiro de Software especializado em tecnologias Front-end e Back-end, segurança cibernética e muito mais. Veja meus projetos e habilidades.">
-  <meta property="og:image" content="./assets/logo.png">
-  <meta property="og:url" content="https://pablosousa7.github.io/pablo-sousa-portfolio/">
-  <meta property="og:type" content="website">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', 'IBM Plex Sans', 'Segoe UI', 'Roboto', Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #f8fafc 55%, #e9ecf6 100%);
+      color: #222;
+    }
+    .main-accent { color: #4263eb; }
+    .bg-accent-gradient {
+      background: linear-gradient(90deg, #4263eb 0%, #7c3aed 100%);
+      color: #fff !important;
+    }
+    .section-title {
+      font-size: 2.3rem;
+      font-weight: 900;
+      letter-spacing: .02em;
+      margin-bottom: 1.6rem;
+    }
+    .enterprise-card {
+      border-radius: 1.2rem;
+      box-shadow: 0 8px 30px #4263eb22;
+      border: none;
+      padding: 2.1rem 1.7rem;
+      background: #fff;
+      transition: box-shadow .18s, transform .13s;
+      min-height: 240px;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
+    }
+    .enterprise-card:hover {
+      box-shadow: 0 14px 40px #4263eb44;
+      transform: translateY(-5px) scale(1.02);
+    }
+    .enterprise-icon {
+      font-size: 2.8rem;
+      color: #4263eb;
+      margin-bottom: 1rem;
+      filter: drop-shadow(0 2px 8px #4263eb55);
+    }
+    .enterprise-list li {
+      font-size: 1.09rem;
+      margin-bottom: .7em;
+      color: #335;
+      display: flex;
+      align-items: center;
+      gap: .7em;
+    }
+    .results-section, .diffs-section {
+      background: #fff;
+      border-radius: 1.3rem;
+      box-shadow: 0 2px 12px #4263eb13;
+      padding: 2.4em 2em;
+      margin: 2.5em auto;
+      max-width: 900px;
+    }
+    .results-section h4, .diffs-section h4 {
+      font-size: 1.35em;
+      color: #4263eb;
+      font-weight: 800;
+      margin-bottom: 1.1em;
+    }
+    .results-list, .diffs-list {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+    .results-list li, .diffs-list li {
+      font-size: 1.08em;
+      padding: .6em 0;
+      border-bottom: 1px solid #f1f1fa;
+      display: flex;
+      align-items: center;
+      gap: .6em;
+    }
+    .results-list li:last-child, .diffs-list li:last-child { border-bottom: none; }
+    .results-icon, .diffs-icon {
+      color: #7c3aed;
+      font-size: 1.25em;
+      flex-shrink: 0;
+    }
+    .container {
+      max-width: 1200px;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+    .footer-ultra {
+      background: linear-gradient(90deg, #f3f5fd 0%, #e9ecf6 100%);
+      color: #4263eb;
+      padding: 2rem 0;
+      font-size: 1.09em;
+      text-align: center;
+      border-top: 2px solid #e9ecf6;
+      margin-top: 3rem;
+    }
+    /* Top values block */
+    .values-block {
+      background: #fff;
+      border-radius: 1.3rem;
+      box-shadow: 0 2px 12px #4263eb13;
+      padding: 2em 1.4em 1.1em 1.4em;
+      display: flex;
+      gap: 2.5em;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2em;
+      flex-wrap: wrap;
+    }
+    .value-item {
+      display: flex;
+      align-items: center;
+      gap: .7em;
+      font-size: 1.16em;
+      color: #4263eb;
+      font-weight: 600;
+    }
+    .value-item i {
+      font-size: 2rem;
+      color: #7c3aed;
+      filter: drop-shadow(0 2px 7px #4263eb55);
+    }
+    /* 3x3 grid for skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 2.3em;
+      margin-top: 1.5em;
+    }
+    @media (max-width: 900px) {
+      .container { padding-left: 1rem; padding-right: 1rem; }
+      .section-title { font-size: 1.7rem; }
+      .enterprise-card { min-height: 200px; padding: 1.1rem .9rem;}
+      .results-section, .diffs-section { padding: 1.2em .75em; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .values-block { flex-direction: column; gap: 1em; }
+    }
+    @media (max-width: 600px) {
+      .section-title { font-size: 1.2rem; }
+      .enterprise-card { min-height: 150px; }
+    }
+  </style>
 </head>
-
-
-
-
-
 <body>
-  <header class="p-3">
-    <div class="container">
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-          <img src="./assets/logo.png" alt="Pablo Sousa" width="150">
-        </a>
-
-        <ul class="nav col-12 col-lg-auto ms-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="#banner" class="nav-link px-2 fs-4 text-white">Início</a></li>
-          <li><a href="#skills" class="nav-link px-2 fs-4 text-white">Skills</a></li>
-          <li><a href="#my-projects" class="nav-link px-2 fs-4 text-white">Projetos</a></li>
-          <li><a href="#contact" class="nav-link px-2 fs-4 contact-btn fs-4">Contato</a></li>
-        </ul>
-        <ul class="nav col-12 col-lg-auto ms-lg-auto mb-2 justify-content-center mb-md-0 align-items-center justify-content-center">
-          <li><a href="https://github.com/pablosousa7" target="_blank" class="nav-link px-2 fs-4 text-white"><i class="fa-brands fa-github"></i></a></li>
-          <li><a href="#" id="pt-br" class="nav-link px-2 fs-4 text-white" title="Português">
-            <img src="https://www.worldometers.info/img/flags/br-flag.gif" alt="Português" width="32">
-          </a></li>
-          <li><a href="#" id="en-us" class="nav-link px-2 fs-4 text-white" title="English">
-            <img src="https://www.worldometers.info/img/flags/us-flag.gif" alt="English" width="32">
-          </a></li>
+  <!-- Header/Nav -->
+  <nav class="navbar navbar-expand-lg bg-accent-gradient shadow-sm mb-2">
+    <div class="container py-1">
+      <a class="navbar-brand d-flex align-items-center gap-2 text-white fw-bold fs-4" href="#">
+        <i class="fa-duotone fa-terminal fa-xl"></i>
+        Pablo Sousa
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+        <!-- NAVBAR -->
+<ul class="navbar-nav gap-2">
+  <li class="nav-item">
+    <a class="nav-link text-white fw-semibold active" href="#banner" data-translate="nav_inicio">Início</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-white fw-semibold" href="#skills" data-translate="nav_skills">Skills</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-white fw-semibold" href="#projects" data-translate="nav_projects">Projetos</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link fw-bold" href="#contact" data-translate="nav_contact">
+  <span class="cta-icon-rocket-path">
+    <i class="fa-duotone fa-rocket-launch  text-white"></i>
+  </span>
+  <span class="text-white">Contato</span>
+</a>
+  </li>
+</ul>
+        <ul class="navbar-nav ms-3 gap-2">
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#" id="pt-br" title="Português">
+              <i class="fa-duotone fa-language"></i> PT
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#" id="en-us" title="English">
+              <i class="fa-duotone fa-language"></i> EN
+            </a>
+          </li>
         </ul>
       </div>
     </div>
-  </header>
-  <main>
-    <section id="banner">
-      <div class="container my-5">
-        <div class="row align-items-center justify-content-center swap-columns">
-          <div class="col-sm-12 col-md-6">
+  </nav>
 
-            <p class="fs-5">
-              Olá visitante,<br><br>
-
-              Sou <b class="fs-4">Pablo</b>, um Engenheiro de Software com mais de 7 anos de experiência em tecnologias
-              Front-end, Back-end e integração contínua, apaixonado por unir desenvolvimento de software e práticas de
-              segurança cibernética. Sempre buscando <b class="fs-4">aprendizado</b> e <b class="fs-4">crescimento</b>,
-              meu sonho é prosperar na Europa ou nos
-              EUA.<br/><br/><i>E, entre nós, nunca tirem o home office, por favor <span class="fs-4">—</span> ele é a nossa
-                inspiração diária!</i>
-            </p><br />
-
-            <h1 class="display-5"><b>FROM</b> IDEA <b>TO</b> () <i class="fa-solid fa-bracket-curly"></i><br /><span
-                class="ms-5">RETURN <b id="opportunity">OPORTUNIDADE</b>;</span><br /><i class="fa-solid fa-bracket-curly-right"></i>
-            </h1>
-
-            <div class="row mt-5">
-             
-              <div class="col-sm-12 col-md-6">
-                <a href="#contact" class="btn btn-hire fs-4 w-100 mt-3">Contratar</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-12 col-md-6"> <img src="./assets/my.png" alt="Pablo Sousa - Developer FullStack"
-              class="img-fluid"></div>
-
-        </div>
-      </div>
-    </section>
-    <section id="skills">
-      <div class="container">
-        <h2 class="text-center display-4">Minhas Habilidades</h2>
-        <p class="fs-6 subtitle mt-5 w-75 text-muted mx-auto text-justify">
-          Minhas habilidades incluem um mix poderoso de tecnologias, desde <span>HTML5</span> e <span>CSS3</span> até
-          <span>JavaScript</span><b>,</b> <span>TypeScript</span> e
-          <span>PHP</span>. Sou fluente em frameworks como <span>Angular</span> e <span>Flutter</span><b>,</b> e manjo
-          de <span>Java</span> <span>Spring Boot</span> e <span>Quarkus</span>. Também sou
-          versado em <span>Docker</span><b>,</b> <span>Linux</span><b>,</b> <span>MySQL</span><b>,</b>
-          <span>MariaDB</span><b>,</b> <span>CI/CD</span> e <span>OpenShift</span><b>,</b> com um toque de
-          <span>segurança cibernética</span>. Em resumo,
-          sou um desenvolvedor apaixonado que adora explorar novas tecnologias e encontrar soluções criativas.
+  <!-- Banner -->
+  <section id="banner" class="container mt-5 mb-3">
+    <div class="row align-items-center justify-content-between g-4">
+      <div class="col-lg-7">
+        <h1 class="section-title main-accent mb-3" data-translate="banner_title">Engenheiro de Software</h1>
+        <p class="lead mb-4" data-translate="banner_intro">
+          Olá! Sou Pablo, especialista em sistemas robustos, segurança, integrações, cloud e automação.
+          Foco em resultados, eficiência e escalabilidade.<br><br>
+          <span class="fw-bold main-accent">+10 anos entregando soluções de alto impacto para empresas.</span><br><br>
         </p>
-        <div class="row">
-          <div class="col-md-3 mb-4">
-            <div class="card skill-card shadow-sm border-0 bg-light">
-              <img src="assets/rocket.png" width="95" class="img-skills" alt="Rocket">
-              <div class="card-body text-center">
-                <div class="mb-3">
-                  <i class="skill-icon bi bi-code-slash"></i>
-                </div>
-                <h5 class="skill-title fs-3 mt-5">Front-end</h5>
-                <p class="skill-description">HTML5, CSS3, JavaScript, TypeScript, Angular, Flutter.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-3 mb-4">
-            <div class="card skill-card shadow-sm border-0 bg-light">
-              <img src="assets/coffe.png" alt="coffee" width="95" class="img-skills">
-              <div class="card-body text-center">
-                <div class="mb-3">
-                  <i class="skill-icon bi bi-hdd-stack"></i>
-                </div>
-                <h5 class="skill-title fs-3  mt-5">Back-end</h5>
-                <p class="skill-description">PHP, Java, Java Spring Boot, Quarkus.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-3 mb-4">
-            <div class="card skill-card shadow-sm border-0 bg-light">
-              <img src="assets/shield.png" alt="DevOps & Segurança" width="95" class="img-skills">
-              <div class="card-body text-center">
-                <div class="mb-3">
-                  <i class="skill-icon bi bi-tools"></i>
-                </div>
-                <h5 class="skill-title fs-3 mt-5">DevOps & Segurança</h5>
-                <p class="skill-description">Docker, Linux, OpenVAS, Cyber Security.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-3 mb-4">
-            <div class="card skill-card shadow-sm border-0 bg-light">
-              <img src="assets/db.png" alt="Banco de Dados" width="95" class="img-skills">
-              <div class="card-body text-center">
-                <div class="mb-3">
-                  <i class="skill-icon bi bi-database"></i>
-                </div>
-                <h5 class="skill-title fs-3 mt-5">Banco de Dados</h5>
-                <p class="skill-description">MySQL, MariaDB.</p>
-              </div>
-            </div>
-          </div>
+        <ul class="enterprise-list mb-4">
+          <li id="banner-list1"><i class="fa-solid fa-square-check diffs-icon"></i>Fullstack | DevOps | Cloud | Security</li>
+          <li id="banner-list3"><i class="fa-solid fa-square-check diffs-icon"></i>Consultoria e mentoria</li>
+          <li id="banner-list2"><i class="fa-solid fa-square-check diffs-icon"></i>Sempre ajudando o próximo</li>
+        </ul>
+        <!-- BANNER CTA -->
+<div class="d-flex gap-3">
+  <a href="#contact" class="btn btn-accent-gradient btn-lg btn-cta-rocket">
+  <span class="cta-icon-rocket-path">
+    <i class="fa-duotone fa-rocket-launch fs-3 main-accent"></i>
+  </span>
+  <span class="section-title main-accent">Contratar</span>
+</a>
+  
+</div>
+      </div>
+      <div class="col-lg-5 text-center">
+        <!-- Valores robustos -->
+        <div class="values-block">
+          <div class="value-item" id="value1"><i class="fa-duotone fa-shield-halved"></i> Segurança é prioridade</div>
+          <div class="value-item" id="value2"><i class="fa-duotone fa-briefcase"></i> Seriedade e responsabilidade</div>
+          <div class="value-item" id="value3"><i class="fa-duotone fa-award"></i> Excelência comprovada</div>
+          <div class="value-item" id="value4"><i class="fa-duotone fa-handshake"></i> Transparência e parceria</div>
+          <div class="value-item" id="value5"><i class="fa-duotone fa-user-check"></i> Compromisso com resultados</div>
         </div>
       </div>
-    </section>
-    <section id="my-projects">
-      <div class="container p-5">
-        <h2 class="text-center display-4">Meus Projetos</h2>
-        <p class="fs-6 subtitle mt-5 w-75 text-muted mx-auto text-justify">
-          Explore minhas aventuras tecnológicas! 🚀 Desde criar aplicações que tornam o mundo mais digital até resolver
-          problemas com soluções elegantes e criativas, meus projetos são verdadeiros campos de batalha para inovações.
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="container my-5">
+    <h2 class="section-title main-accent text-center" data-translate="skills_title">Skills & Expertise</h2>
+    <div class="skills-grid">
+      <div class="enterprise-card text-center h-100">
+        <i class="fa-duotone fa-browser enterprise-icon"></i>
+        <h5>Front-end</h5>
+        <p id="skills-frontend">React, Angular, Flutter, TypeScript, HTML5, CSS3, JavaScript, jQuery, Bootstrap</p>
+      </div>
+      <div class="enterprise-card text-center h-100">
+        <i class="fa-duotone fa-server enterprise-icon"></i>
+        <h5>Back-end</h5>
+        <p id="skills-backend">Java(8, 11, 17, 21, 24), Spring Boot, Node.js, PHP, Quarkus</p>
+      </div>
+      <div class="enterprise-card text-center h-100">
+        <i class="fa-duotone fa-gears enterprise-icon"></i>
+        <h5>DevOps & Segurança</h5>
+        <p id="skills-devops">Docker, Linux, OpenShift, CI/CD, Cyber Security, Jenkins, Grafana, Terraform, Kafka</p>
+      </div>
+      <div class="enterprise-card text-center h-100">
+        <i class="fa-duotone fa-database enterprise-icon"></i>
+        <h5>Banco de Dados</h5>
+        <p id="skills-db">MySQL, MariaDB, MongoDB,Postgres</p>
+      </div>
+      <div class="enterprise-card text-center h-100">
+        <i class="fa-duotone fa-cloud enterprise-icon"></i>
+        <h5>AWS & Cloud</h5>
+        <p id="skills-cloud">AWS, EC2, S3, RDS, IAM, SQS, SNS</p>
+      </div>
+      <div class="enterprise-card text-center h-100">
+        <i class="fa-duotone fa-users-viewfinder enterprise-icon"></i>
+        <h5>Metodologias </h5>
+        <p id="skills-gestao">kanban, Scrum
         </p>
+      </div>
+    </div>
+    <!-- Diferenciais -->
+    <div class="diffs-section mt-5">
+      <h4><i class="fa-duotone fa-lightbulb-on diffs-icon"></i> <span data-translate="diffs_title">Diferenciais</span></h4>
+      <ul class="diffs-list">
+        <li id="diffs1"><i class="fa-solid fa-webhook diffs-icon"></i> Infraestrutura como código e automação total</li>
+        <li id="diffs2"><i class="fa-duotone fa-chart-mixed diffs-icon"></i> Projetos escaláveis, seguros, monitorados e auditados</li>
+        <li id="diffs3"><i class="fa-duotone fa-people-group diffs-icon"></i> Coperação ágil entre times de desenvolvimento, operações e negócio</li>
+        <li id="diffs4"><i class="fa-duotone fa-laptop-code diffs-icon"></i> Documentação, compliance e governança técnica</li>
+        
+        <li id="diffs6"><i class="fa-duotone fa-code diffs-icon"></i> Boas práticas: Clean Code, SOLID, Clean Architecture, MVC</li>
+        <li id="diffs7"><i class="fa-duotone fa-shield-check diffs-icon"></i> Spring Security, Kafka Security</li>
+        <li id="diffs8"><i class="fa-duotone fa-bug diffs-icon"></i> TDD, DDD, Junit, Jasmine</li>
+        <li id="diffs9"><i class="fa-duotone fa-certificate diffs-icon"></i> Certificação internacional em ETH</li>
+      </ul>
+    </div>
+  </section>
 
-        <div class="row mb-5 gap-2 justify-content-center">
-          <div class="card col-3 border-0 p-0">
-            <img src="https://i.ibb.co/V2CypMZ/1.png" alt="Projeto 1" class="img-fluid">
-
-          </div>
-          <div class="card col-3 border-0 p-0">
-            <img src="https://i.ibb.co/tYZHtMM/2.png" alt="Projeto 2" class="img-fluid">
-
-          </div>
-          <div class="card col-3 border-0 p-0">
-            <img src="https://i.ibb.co/g3cSznc/3.png" alt="Projeto 3" class="img-fluid">
-
-          </div>
-          <div class="card col-3 border-0 p-0">
-            <img src="https://i.ibb.co/N9z1NSJ/4.png" alt="Projeto 4" class="img-fluid">
-
-          </div>
-          <div class="card col-3 border-0 p-0">
-            <img src="https://i.ibb.co/vsZZMfs/5.png" alt="Projeto 5" class="img-fluid">
-
-          </div>
-          <div class="card col-3 border-0 p-0">
-            <img src="https://i.ibb.co/94VGH6b/6.png" alt="Projeto 6" class="img-fluid">
-
-          </div>
+  <!-- Projetos -->
+  <section id="projects" class="container my-5">
+    <h2 class="section-title main-accent text-center" id="projects-title">Projetos Pessoais</h2>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="enterprise-card h-100">
+          <div class="enterprise-icon mb-0"><i class="fa-duotone fa-clock"></i></div>
+          <h5 id="proj-clippertimer-title">ClipperTimer, App de gestão de barbearia e salões</h5>
+          <p id="proj-clippertimer-desc">
+            ClipperTimer é um aplicativo que desenvolvi ao longo de quase dois anos,
+            com o objetivo de oferecer uma experiência de usuário simplificada e eficiente,
+            centrada em classificações.
+          </p>
         </div>
       </div>
-    </section>
-    <section id="phase">
-      <div class="container p-5">
-        <h2 class="text-center display-4 w-75 m-auto text-white">
-          <i class="fa-solid fa-quote-left opacity-25"></i> A única maneira de fazer um ótimo trabalho é amar o que você
-          faz.<i class="fa-solid fa-quote-right opacity-25"></i>
-        </h2>
-        <p class="fs-4 text-center">- Steve Jobs</p>
+      <div class="col-md-6 col-lg-4">
+        <div class="enterprise-card h-100">
+          <div class="enterprise-icon mb-0"><i class="fa-duotone fa-hospital"></i></div>
+          <h5 id="proj-medlyx-title">Medlyx, App para clínica e hospital</h5>
+          <p id="proj-medlyx-desc">
+            App para desktop e mobile, focado em hospitais e clínicas. Facilita o gerenciamento de atendimentos, consultas, controle de estoque, finanças e equipes, promovendo operações mais eficientes e organizadas. E também um sistema de engine gráfica feita em c++ para ajudar médicos em suas análises. (ainda em desenvolvimento)
+          </p>
+        </div>
       </div>
-    </section>
-    <section id="contact">
-      <div class="container mt-5">
-        <h2 class="text-center display-4 mb-2">Contato</h2>
-        <span class="text-center d-block mb-5">Faça já seu Orçamento de Graça</span>
-        <p class="fs-5 text-center"><img src="./assets/email.png" alt="prsousa730@gmail.com" width="75">prsousa730@gmail.com</p>
+      <div class="col-md-6 col-lg-4">
+        <div class="enterprise-card h-100">
+          <div class="enterprise-icon mb-0"><i class="fa-duotone fa-cash-register"></i></div>
+          <h5 id="proj-zenithpos-title">ZenithPOS, Sistema de Ponto de Venda</h5>
+          <p id="proj-zenithpos-desc">
+            Sistema desktop robusto para varejo, gerencia vendas, estoque, cadastros e integra com TEF (maquininha de cartão), focando em interface de usuário eficiente e funcionalidades avançadas.
+          </p>
+        </div>
       </div>
-    </section>
-    <footer class="mt-5">
-      <p class="text-center p-5 mb-0 text-white">Todos os direitos reservados - Copyright &copy 2024</p>
-    </footer>
-  </main>
+    </div>
+    
+  </section>
 
+  <!-- Contato -->
+  <section id="contact" class="container my-5">
+    <div class="enterprise-card mx-auto" style="max-width: 500px;">
+      <h2 class="section-title main-accent text-center" id="contact-title">Contato</h2>
+      <p class="lead text-center" id="contact-lead">
+        Vamos conversar sobre projetos, consultoria, mentoria ou parceria? <br><br>
+        <i class="fa-duotone fa-envelope main-accent"></i> <span class="fw-bold">prsousa730@gmail.com</span>
+      </p>
+      <div class="d-flex justify-content-center gap-3 mb-3">
+        
+        <a href="https://www.linkedin.com/in/pablo-sousa" class="btn btn-accent-gradient btn-social"><i class="fa-brands fa-linkedin main-accent"></i> LinkedIn</a>
+      </div>
+      <div class="mt-4">
+        <h6 class="main-accent text-center mb-2" id="contact-available">Disponível para:</h6>
+        <ul class="enterprise-list mb-0">
+          <li id="contact1"><i class="fa-duotone fa-briefcase main-accent"></i> Freelance, projetos corporativos, consultoria técnica, CLT full-time remote, PJ full-time remote</li>
+          
+          
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer-ultra">
+    <span id="footer">© 2025 Pablo Sousa</span>
+  </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="./script/script.js"></script>
+  <script src="script/translate.js"></script>
 </body>
-
 </html>
