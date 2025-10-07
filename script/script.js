@@ -18,7 +18,7 @@ const TRANSLATIONS = {
     value5: `<i class="fa-duotone fa-user-check"></i> Compromisso com resultados`,
     skills_title: "Skills & Expertise",
     skills_frontend: "React, Angular, Flutter, TypeScript, HTML5, CSS3, JavaScript, jQuery, Bootstrap",
-    skills_backend: "Java(8, 11, 17, 21, 24), Spring Boot, Node.js, PHP, Quarkus",
+    skills_backend: "Java(8, 11, 17, 21, 24), Spring Boot, Node.js, PHP, Quarkus, C++",
     skills_devops: "Docker, Linux, OpenShift, CI/CD, Cyber Security, Jenkins, Grafana, Terraform, Kafka",
     skills_db: "MySQL, MariaDB, MongoDB, Postgres",
     skills_cloud: "AWS, EC2, S3, RDS, IAM, SQS, SNS",
