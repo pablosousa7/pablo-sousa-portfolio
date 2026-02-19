@@ -7,9 +7,7 @@ const TRANSLATIONS = {
     nav_contact: `<span class="cta-icon-rocket-path"><i class="fa-duotone fa-rocket-launch text-white"></i></span> <span class="text-white">Contato</span>`,
 
     banner_title: "Engenheiro de Software",
-    banner_intro: `Olá! Sou Pablo, especialista em sistemas robustos, segurança, integrações, cloud e automação.
-          Foco em resultados, eficiência e escalabilidade.<br><br>
-          <span class="fw-bold main-accent">16 anos entregando soluções de alto impacto para empresas.</span><br><br>`,
+    banner_intro: `Olá, eu sou o Pablo! Gosto criar sistemas fortes, seguros e cheios de integração.<br>Sou fã de automação e tudo que deixa a vida mais prática e escalável.<br><span class='fw-bold main-accent'>16 anos transformando ideias em soluções que fazem diferença de verdade.</span><br><br>`,
 
     banner_list1: `<i class="fa-solid fa-square-check diffs-icon"></i>Fullstack`,
     banner_list2: `<i class="fa-solid fa-square-check diffs-icon"></i>Sempre ajudando o próximo`,
