@@ -69,7 +69,7 @@ const TRANSLATIONS = {
 
     skills_title: "Skills & Expertise",
     skills_frontend: "React, Angular, Flutter, TypeScript, HTML5, CSS3, JavaScript, jQuery, Bootstrap",
-    skills_backend: "Java(8, 11, 17, 21, 24, 25), Spring Boot, Node.js, PHP, Quarkus, C++",
+    skills_backend: "Java SE, EJB, JAVA EE, Spring Boot, Node.js, PHP, Quarkus, C++",
     skills_devops: "Docker, Linux, OpenShift, CI/CD, Jenkins, Grafana, Terraform, Kafka",
     skills_db: "MySQL, MariaDB, MongoDB, Postgres",
     skills_cloud: "AWS, EC2, S3, RDS, IAM, SQS, SNS",
