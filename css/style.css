@@ -1,1 +1,722 @@
+/* Container principal */
+.laser-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #0a0a0a;
+    border-radius: 20px;
+    z-index: 0;
+    overflow: hidden; 
+    padding: 2.5px; /* Espessura da trilha */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
+/* O Feixe de Luz (Snake/Beam effect) */
+.laser-card::before {
+    content: '';
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    top: -100%;
+    left: -100%;
+    
+    /* ESTADO NORMAL: Rastro curto e discreto */
+    /* A transparência vem primeiro, e a cor sólida encerra o ciclo (Cabeça) */
+    background: conic-gradient(
+        from 0deg,
+        transparent 280deg,            /* Vazio na maior parte */
+        rgba(0, 210, 255, 0.1) 320deg, /* Início da cauda (bem suave) */
+        var(--laser-color, #00d2ff) 360deg /* Cabeça brilhante */
+    );
+    
+    animation: rotateLaser 4s linear infinite;
+    opacity: 0.3;
+    transition: opacity 0.5s ease;
+}
+
+.laser-card:hover {
+    box-shadow: 0 0 25px -5px var(--laser-color);
+}
+
+.laser-card:hover::before {
+    opacity: 1;
+    animation-duration: 2s;
+    
+    /* Aqui invertemos a densidade: 
+       A transparência começa cedo e a cor vai 'subindo' até a cabeça */
+    background: conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        rgba(0, 210, 255, 0.05) 60deg,  /* Fim da cauda (quase sumindo) */
+        rgba(0, 210, 255, 0.3) 180deg,  /* Corpo do laser */
+        rgba(0, 210, 255, 0.6) 300deg,  /* Pescoço do laser (mais forte) */
+        var(--laser-color, #00d2ff) 360deg /* Cabeça sólida (ponto de impacto) */
+    );
+}
+
+.laser-content {
+    position: relative;
+    background: #0a0a0a;
+    border-radius: 14px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem 1.5rem;
+    z-index: 1;
+}
+
+/* Variantes de Cores */
+.active-cyan { --laser-color: #00d2ff; }
+.active-blue { --laser-color: #3a86ff; }
+.active-purple { --laser-color: #8338ec; }
+.active-red { --laser-color: #ff006e; }
+.active-orange { --laser-color: #fb5607; }
+.active-green { --laser-color: #06d6a0; }
+
+@keyframes rotateLaser {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Estilos de ícone e badges (mantidos) */
+.laser-icon {
+    font-size: 3rem;
+    color: var(--laser-color);
+    margin-bottom: 1.2rem;
+    transition: 0.4s;
+    filter: drop-shadow(0 0 2px var(--laser-color));
+}
+.laser-card:hover .laser-icon {
+    transform: scale(1.1) rotate(-5deg);
+    filter: drop-shadow(0 0 15px var(--laser-color));
+}
+
+.badge-tech {
+    background: rgba(255,255,255, 0.05);
+    border: 1px solid rgba(255,255,255, 0.1);
+    color: #ccc;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+}
+
+
+/* Container da Nav flutuante */
+.modern-nav {
+    padding: 20px 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1050;
+}
+
+/* Efeito quando rolar a página (adicionar classe 'scrolled' via JS ou usar apenas transparência) */
+.modern-nav.scrolled, .modern-nav {
+    padding: 12px 0;
+}
+
+.nav-container {
+    background: rgba(15, 15, 15, 0.7);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 100px; /* Estilo 'Pill' flutuante */
+    padding: 8px 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo */
+.modern-logo {
+    text-decoration: none;
+}
+
+.logo-text {
+    color: white;
+    font-weight: 800;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+}
+
+.logo-icon {
+    width: 35px;
+    height: 35px;
+    background: var(--laser-color, #00d2ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    color: #000;
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+}
+
+/* Links de Navegação */
+.nav-link-custom {
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 8px 16px !important;
+    position: relative;
+    transition: 0.3s;
+}
+
+.nav-link-custom:hover {
+    color: #fff !important;
+}
+
+/* O "Laser" sob os links no hover */
+.nav-link-custom::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--laser-color, #00d2ff);
+    box-shadow: 0 0 10px var(--laser-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link-custom:hover::after {
+    width: 60%;
+}
+
+/* Botão de Idioma */
+.lang-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.lang-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Botão Contato Premium */
+.contact-btn {
+    background: #fff;
+    color: #000 !important;
+    padding: 10px 22px;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    border: 2px solid transparent;
+}
+
+.contact-btn:hover {
+    background: transparent;
+    color: #fff !important;
+    border-color: #fff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Mobile Toggler */
+.custom-toggler {
+    padding: 0;
+    outline: none !important;
+}
+
+/* Ajuste Mobile */
+@media (max-width: 991px) {
+    .nav-container {
+        border-radius: 20px;
+        padding: 15px;
+    }
+    .navbar-collapse {
+        margin-top: 15px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        padding-top: 15px;
+    }
+}
+
+
+/* Configurações Gerais do Hero */
+.hero-section {
+    padding: 100px 0;
+    
+}
+
+.text-gray { color: #a0a0a0; }
+
+/* Efeito de Névoa ao fundo */
+.blob-glow {
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(0, 210, 255, 0.15) 0%, transparent 70%);
+    filter: blur(80px);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Título com Gradiente */
+.text-gradient {
+    background: linear-gradient(90deg, #fff, #00d2ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.hero-text {
+    line-height: 1.8;
+    max-width: 600px;
+    font-size: 1.15rem;
+}
+
+/* Badge de Experiência com Pulso */
+.badge-experience {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 8px 16px;
+    border-radius: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.pulse-icon {
+    width: 8px;
+    height: 8px;
+    background: #00d2ff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(0, 210, 255, 0.7);
+    animation: pulse-blue 2s infinite;
+}
+
+@keyframes pulse-blue {
+    0% { box-shadow: 0 0 0 0 rgba(0, 210, 255, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(0, 210, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 210, 255, 0); }
+}
+
+/* Botões Modernos */
+.hero-btn-primary {
+    background: #fff;
+    color: #000;
+    padding: 14px 32px;
+    border-radius: 100px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.3s;
+    border: 2px solid #fff;
+}
+
+.hero-btn-primary:hover {
+    background: transparent;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.hero-btn-outline {
+    background: transparent;
+    color: #fff;
+    padding: 14px 32px;
+    border-radius: 100px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: 0.3s;
+}
+
+.hero-btn-outline:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: #fff;
+}
+
+/* Grid de Valores com o efeito laser que você já tem */
+.values-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.value-item {
+    cursor: default;
+    transition: 0.3s;
+}
+
+.value-item .laser-content {
+    justify-content: flex-start !important;
+    font-weight: 500;
+    color: #eee;
+    background: #0d0d0d !important; /* Fundo levemente mais claro que o hero */
+}
+
+
+/* Lista Estilizada de Diferenciais */
+.diff-modern-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.diff-modern-list li {
+    color: #b0b0b0;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    transition: 0.3s;
+    font-size: 0.95rem;
+}
+
+.diff-modern-list li i {
+    color: var(--laser-color);
+    margin-top: 3px;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+/* Efeito de Hover na Lista */
+.diff-modern-list li:hover {
+    color: #fff;
+    padding-left: 8px; /* Pequeno deslize */
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.laser-card:hover .diff-modern-list li i {
+    filter: drop-shadow(0 0 8px var(--laser-color));
+    transform: scale(1.2);
+}
+
+/* Ajuste no laser-content para listas */
+.laser-card .laser-content {
+    justify-content: flex-start !important;
+}
+
+/* Remover a borda do último item da lista */
+.diff-modern-list li:last-child {
+    border-bottom: none;
+}
+
+
+/* Container Ilha de Contato */
+.contact-island {
+    max-width: 850px;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 30px;
+    padding: 60px;
+    transition: border-color 0.4s ease;
+}
+
+.contact-island:hover {
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Labels Pequenas Estilo Dashboard */
+.label-tiny {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--laser-color, #00d2ff);
+    text-transform: uppercase;
+}
+
+/* Link de Email Gigante e Elegante */
+.email-link {
+    display: block;
+    font-size: 1.8rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 300;
+    transition: 0.3s;
+    word-break: break-all;
+}
+
+.email-link:hover {
+    color: var(--laser-color, #00d2ff);
+    transform: translateX(5px);
+}
+
+/* Botão LinkedIn Minimalista */
+.linkedin-premium {
+    display: inline-flex;
+    align-items: center;
+    background: #fff;
+    color: #000;
+    padding: 12px 25px;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.linkedin-premium:hover {
+    background: var(--laser-color, #00d2ff);
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(0, 210, 255, 0.2);
+}
+
+/* Lista de Disponibilidade */
+.availability-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.availability-list li {
+    color: #fff;
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: #28a745; /* Verde Sucesso */
+    border-radius: 50%;
+    box-shadow: 0 0 10px #28a745;
+}
+
+.availability-list small {
+    color: #666;
+    font-size: 0.8rem;
+}
+
+/* Linha Divisória Customizada */
+@media (min-width: 768px) {
+    .border-end-custom {
+        border-right: 1px solid rgba(255, 255, 255, 0.05);
+    }
+}
+
+@media (max-width: 767px) {
+    .contact-island { padding: 40px 20px; }
+    .email-link { font-size: 1.4rem; }
+}
+
+
+.footer-modern {
+    background: linear-gradient(to bottom, #050505, #000); /* Fade para o preto absoluto */
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.footer-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(255, 255, 255, 0.05) 50%, 
+        transparent 100%
+    );
+}
+
+.footer-tagline {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #555;
+    border-left: 1px solid #333;
+    padding-left: 15px;
+}
+
+.text-gray {
+    color: #666;
+    font-size: 0.85rem;
+}
+
+/* Botão Back to Top */
+.back-to-top {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.4s ease;
+}
+
+.back-to-top:hover {
+    background: var(--laser-color, #00d2ff);
+    color: #000;
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
+    border-color: transparent;
+}
+
+/* Responsivo */
+@media (max-width: 767px) {
+    .footer-tagline {
+        border-left: none;
+        padding-left: 0;
+        margin-top: 5px;
+        display: block;
+    }
+}
+
+
+/* Gradiente Dourado para o Título */
+.text-gradient-gold {
+    background: linear-gradient(135deg, #ffd700, #ff8c00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* O Card Estilo Troféu */
+.trophy-card {
+    position: relative;
+    background: linear-gradient(145deg, #151515, #0a0a0a);
+    border-radius: 30px;
+    padding: 3px; /* Espessura da borda fixa */
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.trophy-card:hover {
+    transform: scale(1.05) translateY(-15px);
+}
+
+/* Borda fixa que brilha (Troféu) */
+.trophy-card.gold { border: 1px solid rgba(255, 215, 0, 0.3); }
+.trophy-card.quantum { border: 1px solid rgba(163, 71, 255, 0.3); }
+
+/* Conteúdo Interno */
+.trophy-content {
+    background: #0f0f0f;
+    border-radius: 28px;
+    padding: 50px 30px;
+    height: 100%;
+    z-index: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Ícones de impacto */
+.trophy-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    transition: 0.5s;
+}
+
+.gold .trophy-icon { color: #ffd700; filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.4)); }
+.quantum .trophy-icon { color: #a347ff; filter: drop-shadow(0 0 15px rgba(163, 71, 255, 0.4)); }
+
+.trophy-card:hover .trophy-icon {
+    transform: rotateY(360deg);
+}
+
+.degree-title {
+    color: #fff;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.institution {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
+
+/* Selo de Conquista */
+.trophy-seal {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px 20px;
+    border-radius: 100px;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gold .trophy-seal { color: #ffd700; border-color: rgba(255, 215, 0, 0.2); }
+.quantum .trophy-seal { color: #a347ff; border-color: rgba(163, 71, 255, 0.2); }
+
+.degree-desc {
+    color: #bbb;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Brilho de fundo (Glow) */
+.trophy-glow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0; left: 0;
+    opacity: 0;
+    transition: opacity 0.5s;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.gold .trophy-glow { background: radial-gradient(circle at center, rgba(255, 215, 0, 0.15) 0%, transparent 70%); }
+.quantum .trophy-glow { background: radial-gradient(circle at center, rgba(163, 71, 255, 0.15) 0%, transparent 70%); }
+
+.trophy-card:hover .trophy-glow {
+    opacity: 1;
+}
+
+
+
+body { 
+    font-family: 'Inter', sans-serif; 
+    background-color: #050505; 
+    color: var(--text-main);
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Manchas de luz orgânicas para dar vida ao fundo */
+body::before, body::after {
+    content: "";
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(120px);
+    opacity: 0.15; /* Sutil para não cansar a vista */
+    pointer-events: none;
+}
+
+body::before {
+    background: radial-gradient(circle, #00d2ff, transparent 70%);
+    top: -200px;
+    left: -200px;
+}
+
+body::after {
+    background: radial-gradient(circle, #8338ec, transparent 70%);
+    bottom: -200px;
+    right: -200px;
+}
