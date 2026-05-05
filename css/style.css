@@ -720,3 +720,44 @@ body::after {
     bottom: -200px;
     right: -200px;
 }
+
+
+/* Container das Tags */
+.skill-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* Espaço entre as tags */
+    margin-top: auto;
+    padding-top: 10px;
+}
+
+/* Estilo Individual da Tag */
+.skill-tag {
+    background: rgba(255, 255, 255, 0.04); /* Fundo quase invisível por padrão */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Borda sutil */
+    color: #cbd5e1; /* Cor de texto suave */
+    padding: 6px 14px;
+    border-radius: 8px; /* Cantos levemente arredondados */
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    white-space: nowrap; /* Impede que o nome da tecnologia quebre em 2 linhas */
+}
+
+/* Efeito quando o mouse passa no CARD inteiro */
+.laser-card:hover .skill-tag {
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Efeito quando o mouse passa na TAG específica */
+.skill-tag:hover {
+    background: var(--laser-color) !important; /* Ganha a cor do laser do card */
+    color: #000 !important; /* Texto preto para alto contraste no brilho */
+    border-color: var(--laser-color) !important;
+    box-shadow: 0 0 15px var(--laser-color); /* Brilho neon na tag */
+    transform: translateY(-2px);
+}
