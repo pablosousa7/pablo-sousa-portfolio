@@ -3,7 +3,6 @@
 Welcome to my professional portfolio repository! This project showcases my 16 years of experience connecting high-level software architecture to low-level hardware constraints.
 
 ## 🔗 Live Preview & Connect
-- **Portfolio:** [Insert your hosted link here, e.g., pablosousa.dev]
 - **LinkedIn:** [https://www.linkedin.com/in/pablo-sousa](https://www.linkedin.com/in/pablo-sousa)
 - **Contact:** [prsousa730@gmail.com](mailto:prsousa730@gmail.com)
 
