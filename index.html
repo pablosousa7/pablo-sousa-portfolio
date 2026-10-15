@@ -1,53 +1,545 @@
-<!DOCTYPE html><html lang="en" data-bs-theme="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pablo Sousa | Software Engineer</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css"><style>:root{--bg-deep:#000000;--bg-surface:rgba(20, 20, 22, 0.6);--text-main:#f5f5f7;--text-muted:#86868b;--accent:#2997ff;--accent-glow:rgba(41, 151, 255, 0.4);--border-subtle:rgba(255, 255, 255, 0.08);--radius-lg:20px;--radius-md:12px;--transition-smooth:all 0.4s cubic-bezier(0.25, 1, 0.5, 1)}body{font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif;background-color:var(--bg-deep);color:var(--text-main);overflow-x:hidden;-webkit-font-smoothing:antialiased}a{text-decoration:none;transition:var(--transition-smooth)}.text-accent{color:var(--accent)}.text-gradient{background:linear-gradient(135deg,#fff 0,#86868b 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.text-gold{background:linear-gradient(135deg,#fde08b 0,#d4af37 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.section-title{font-size:2.5rem;font-weight:700;letter-spacing:-.05em;margin-bottom:3rem}.modern-nav{background:rgba(0,0,0,.5);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border-subtle);padding:1rem 0;transition:var(--transition-smooth)}.logo-text{font-weight:700;letter-spacing:2px;font-size:1.1rem}.nav-link-custom{color:var(--text-main)!important;font-size:.9rem;font-weight:500;opacity:.8}.nav-link-custom:hover{opacity:1;color:var(--accent)!important}.btn-premium{background:var(--text-main);color:var(--bg-deep);padding:.5rem 1.2rem;border-radius:50px;font-weight:600;font-size:.9rem;transition:var(--transition-smooth);border:none;display:inline-flex;align-items:center}.btn-premium:hover{transform:scale(1.05);background:var(--accent);color:#fff;box-shadow:0 0 20px var(--accent-glow)}.btn-outline-premium{background:0 0;color:var(--text-main);border:1px solid var(--border-subtle);padding:.5rem 1.2rem;border-radius:50px;font-weight:500;font-size:.9rem;transition:var(--transition-smooth)}.btn-outline-premium:hover{background:rgba(255,255,255,.1)}.hero-section{min-height:100vh;display:flex;align-items:center;position:relative;padding-top:80px}.blob-glow{position:absolute;top:20%;left:10%;width:400px;height:400px;background:radial-gradient(circle,rgba(41,151,255,.15) 0,rgba(0,0,0,0) 70%);border-radius:50%;z-index:0;filter:blur(40px)}.main-title{font-size:clamp(3rem,5vw,5.5rem);font-weight:800;line-height:1.1;letter-spacing:-.04em}.hero-text{color:var(--text-muted);font-size:1.25rem;font-weight:300;line-height:1.6;max-width:600px}.badge-experience{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.05);border:1px solid var(--border-subtle);padding:8px 16px;border-radius:30px;font-size:.85rem;letter-spacing:1px;text-transform:uppercase}.pulse-icon{width:8px;height:8px;background-color:var(--accent);border-radius:50%;box-shadow:0 0 10px var(--accent);animation:pulse 2s infinite}@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(41,151,255,.7)}70%{box-shadow:0 0 0 10px rgba(41,151,255,0)}100%{box-shadow:0 0 0 0 rgba(41,151,255,0)}}.values-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.bento-card{background:var(--bg-surface);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:20px;backdrop-filter:blur(10px);transition:var(--transition-smooth);display:flex;align-items:center;gap:15px}.bento-card:hover{border-color:rgba(255,255,255,.2);transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,.5)}.bento-card i{font-size:1.5rem;color:var(--text-main)}.bento-card span{font-weight:500;font-size:.95rem}.premium-card{background:var(--bg-surface);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:30px;height:100%;backdrop-filter:blur(10px);transition:var(--transition-smooth);position:relative;overflow:hidden}.premium-card:hover{border-color:rgba(255,255,255,.15);transform:scale(1.02)}.card-icon{font-size:2rem;color:var(--text-main);margin-bottom:20px;display:inline-block}.skill-grid{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}.skill-tag{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);padding:6px 12px;border-radius:8px;font-size:.8rem;color:var(--text-muted);transition:var(--transition-smooth)}.premium-card:hover .skill-tag{border-color:rgba(255,255,255,.2);color:var(--text-main)}.trophy-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:50vw;height:50vh;background:radial-gradient(circle,rgba(212,175,55,.08) 0,rgba(0,0,0,0) 70%);filter:blur(50px);z-index:0;pointer-events:none}.trophy-card{background:linear-gradient(145deg,rgba(30,30,32,.8) 0,rgba(10,10,12,.9) 100%);border:1px solid rgba(212,175,55,.15);border-radius:var(--radius-lg);padding:40px;text-align:center;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);transition:var(--transition-smooth);position:relative;z-index:1;height:100%;box-shadow:inset 0 0 20px rgba(212,175,55,.02)}.trophy-card:hover{border-color:rgba(212,175,55,.5);transform:translateY(-8px);box-shadow:0 15px 40px rgba(212,175,55,.1),inset 0 0 20px rgba(212,175,55,.05)}.trophy-icon{font-size:3.5rem;background:linear-gradient(135deg,#fde08b 0,#d4af37 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:15px;display:inline-block;filter:drop-shadow(0 0 15px rgba(212,175,55,.2))}.trophy-year{display:inline-block;background:rgba(212,175,55,.1);color:#fde08b;padding:6px 16px;border-radius:30px;font-size:.85rem;font-weight:600;margin-bottom:25px;border:1px solid rgba(212,175,55,.2);letter-spacing:1px}.modern-list{list-style:none;padding:0}.modern-list li{padding:12px 0;border-bottom:1px solid var(--border-subtle);display:flex;align-items:flex-start;gap:12px;color:var(--text-muted)}.modern-list li:last-child{border-bottom:none}.modern-list i{color:var(--text-main);font-size:1.2rem}.contact-box{background:linear-gradient(180deg,var(--bg-surface) 0,rgba(0,0,0,0) 100%);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:50px;text-align:center}.email-link{font-size:clamp(1.5rem,3vw,2.5rem);font-weight:700;color:var(--text-main);letter-spacing:-.03em}.email-link:hover{color:var(--accent)}.footer-modern{border-top:1px solid var(--border-subtle);padding:30px 0;font-size:.85rem;color:var(--text-muted)}</style></head><body><nav class="navbar navbar-expand-lg fixed-top modern-nav"><div class="container"><a class="navbar-brand d-flex align-items-center gap-2" href="#"><i class="bi bi-terminal fs-4"></i><span class="logo-text text-white">PABLO<span class="text-muted fw-light">SOUSA</span></span></a><button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"><i class="bi bi-list text-white fs-2"></i></button><div class="collapse navbar-collapse justify-content-end" id="mainNav"><ul class="navbar-nav gap-3 align-items-center"><li class="nav-item"><a class="nav-link nav-link-custom" href="#banner" data-i18n="nav_home">Home</a></li><li class="nav-item"><a class="nav-link nav-link-custom" href="#skills" data-i18n="nav_skills">Skills</a></li><li class="nav-item"><a class="nav-link nav-link-custom" href="#education" data-i18n="nav_education">Education</a></li><li class="nav-item"><a class="nav-link nav-link-custom" href="#features" data-i18n="nav_diffs">Features</a></li><li class="nav-item px-lg-2"><button id="lang-toggle" class="btn-outline-premium border-0"><i class="bi bi-globe me-1"></i><span id="lang-text">EN / PT</span></button></li><li class="nav-item ms-lg-2"><a class="btn-premium" href="#contact"><span data-i18n="nav_contact">Contact</span></a></li></ul></div></div></nav><section id="banner" class="hero-section"><div class="blob-glow"></div><div class="container position-relative z-1"><div class="row align-items-center g-5"><div class="col-lg-7"><div class="badge-experience mb-4"><span class="pulse-icon"></span><span class="fw-bold text-white"><span data-i18n="exp_years">16 YEARS OF EXPERIENCE</span></span></div><h1 class="main-title text-white mb-4" data-i18n="banner_title">Software &<br><span class="text-gradient">Computer Engineer.</span></h1><p class="hero-text mb-5" data-i18n="banner_intro">Hi, I'm <span class="text-white fw-semibold">Pablo</span>. I've spent the last 16 years solving real problems through technology. My job is to ensure everything works, from <span class="text-white">cloud infrastructure </span>to the code that touches the hardware.</p><div class="d-flex flex-wrap gap-3"><a href="#contact" class="btn-premium" data-i18n="btn_hire">Start Project<i class="bi bi-arrow-right ms-2"></i></a><a href="#skills" class="btn-outline-premium" data-i18n="btn_stack">View Stack</a></div></div><div class="col-lg-5"><div class="values-grid"><div class="bento-card"><i class="bi bi-shield-check"></i><span data-i18n="val_security">Priority Security</span></div><div class="bento-card"><i class="bi bi-briefcase"></i><span data-i18n="val_seriousness">Executive Seriousness</span></div><div class="bento-card"><i class="bi bi-cpu"></i><span data-i18n="val_excellence">Technical Excellence</span></div><div class="bento-card"><i class="bi bi-fingerprint"></i><span data-i18n="val_commitment">Real Commitment</span></div></div></div></div></div></section><section id="skills" class="py-5"><div class="container py-5"><div class="mb-5 text-center text-lg-start"><h2 class="section-title text-white" data-i18n="skills_title">Technical Arsenal.</h2></div><div class="row g-4"><div class="col-md-6 col-lg-4"><div class="premium-card"><i class="bi bi-hdd-network card-icon"></i><h5 class="text-white fw-bold mb-3">Back-end</h5><div class="skill-grid"><span class="skill-tag">Java SE / EE</span><span class="skill-tag">Spring Boot</span><span class="skill-tag">Node.js</span><span class="skill-tag">PHP</span><span class="skill-tag">Quarkus</span><span class="skill-tag">C++</span></div></div></div><div class="col-md-6 col-lg-4"><div class="premium-card"><i class="bi bi-window-stack card-icon"></i><h5 class="text-white fw-bold mb-3">Front-end</h5><div class="skill-grid"><span class="skill-tag">React</span><span class="skill-tag">Angular</span><span class="skill-tag">Flutter</span><span class="skill-tag">TypeScript</span><span class="skill-tag">HTML5 / CSS3</span></div></div></div><div class="col-md-6 col-lg-4"><div class="premium-card"><i class="bi bi-shield-lock card-icon"></i><h5 class="text-white fw-bold mb-3">DevOps & Security</h5><div class="skill-grid"><span class="skill-tag">Docker</span><span class="skill-tag">Linux</span><span class="skill-tag">CI/CD</span><span class="skill-tag">Terraform</span><span class="skill-tag">Kafka</span></div></div></div><div class="col-md-6 col-lg-4"><div class="premium-card"><i class="bi bi-clouds card-icon"></i><h5 class="text-white fw-bold mb-3">AWS & Cloud</h5><div class="skill-grid"><span class="skill-tag">AWS</span><span class="skill-tag">EC2 / S3</span><span class="skill-tag">RDS</span><span class="skill-tag">IAM</span><span class="skill-tag">SQS / SNS</span></div></div></div><div class="col-md-6 col-lg-4"><div class="premium-card"><i class="bi bi-database card-icon"></i><h5 class="text-white fw-bold mb-3">Database</h5><div class="skill-grid"><span class="skill-tag">MySQL</span><span class="skill-tag">MariaDB</span><span class="skill-tag">MongoDB</span><span class="skill-tag">PostgreSQL</span></div></div></div><div class="col-md-6 col-lg-4"><div class="premium-card"><i class="bi bi-motherboard card-icon"></i><h5 class="text-white fw-bold mb-3" data-i18n="skill_hard_title">Engineering & Quantum</h5><div class="skill-grid"><span class="skill-tag" data-i18n="skill_badge_termo">Thermodynamics</span><span class="skill-tag" data-i18n="skill_badge_eletro">Electronics</span><span class="skill-tag" data-i18n="skill_badge_quant">Quantum Algorithms</span></div></div></div></div></div></section><section id="education" class="py-5 position-relative mt-4"><div class="trophy-glow"></div><div class="container py-5 position-relative z-1"><div class="text-center mb-5"><h2 class="section-title text-white mb-2" data-i18n="acad_title">Education &<span class="text-gold">Milestones.</span></h2><p class="text-muted" data-i18n="acad_subtitle">Recognized academic excellence and continuous research.</p></div><div class="row justify-content-center g-4"><div class="col-md-6 col-lg-5"><div class="trophy-card"><i class="bi bi-lightning-fill trophy-icon"></i><br><div class="trophy-year">2017 — 2022</div><h4 class="text-white fw-bold mb-1" data-i18n="acad_eng_title">Computer Engineering</h4><p class="text-gold small mb-3 fw-semibold" data-i18n="acad_eng_sub">Bachelor's Degree</p><p class="text-muted" data-i18n="acad_eng_desc">Absolute mastery from hardware to highly complex software architectures.</p></div></div><div class="col-md-6 col-lg-5"><div class="trophy-card"><i class="bi bi-cpu-fill trophy-icon"></i><br><div class="trophy-year">2025 — 2026</div><h4 class="text-white fw-bold mb-1" data-i18n="acad_quant_title">Quantum Computing</h4><p class="text-gold small mb-3 fw-semibold" data-i18n="acad_quant_sub">Postgraduate & Research</p><p class="text-muted" data-i18n="acad_quant_desc">Exploring new paradigms of processing and computational physics.</p></div></div></div></div></section><section id="features" class="py-5 mt-4"><div class="container py-5"><div class="mb-5 text-center"><h2 class="section-title text-white" data-i18n="diffs_title">Strategic Features.</h2></div><div class="row g-4"><div class="col-md-6"><div class="premium-card"><h5 class="text-white fw-bold mb-4 d-flex align-items-center"><i class="bi bi-gear-wide-connected me-3 fs-3 text-accent"></i>Architecture & Ops</h5><ul class="modern-list"><li><i class="bi bi-check2"></i><span data-i18n="diff_1">Infrastructure as code and full automation</span></li><li><i class="bi bi-check2"></i><span data-i18n="diff_2">Scalable, monitored, and audited systems</span></li><li><i class="bi bi-check2"></i><span data-i18n="diff_3">Agile cooperation between teams (DevOps/Business)</span></li><li><i class="bi bi-check2"></i><span data-i18n="diff_5">From transistors to high-level systems</span></li></ul></div></div><div class="col-md-6"><div class="premium-card"><h5 class="text-white fw-bold mb-4 d-flex align-items-center"><i class="bi bi-braces-asterisk me-3 fs-3 text-accent"></i>Quality & Science</h5><ul class="modern-list"><li><i class="bi bi-check2"></i><span data-i18n="diff_6">Clean Code, SOLID, and Clean Architecture</span></li><li><i class="bi bi-check2"></i><span data-i18n="diff_7">Advanced security: Spring & Kafka Security</span></li><li><i class="bi bi-check2"></i><span data-i18n="diff_8">Quality assurance: TDD, DDD, JUnit</span></li><li><i class="bi bi-check2"></i><span data-i18n="diff_9">International ETH Certification standard</span></li></ul></div></div></div></div></section><section id="contact" class="py-5 mb-5 mt-4"><div class="container"><div class="contact-box mx-auto"><h2 class="section-title text-white mb-3" data-i18n="contact_title">Let's build something great.</h2><p class="text-muted mb-5" data-i18n="contact_lead">Ready to elevate the level of your next technological project.</p><div class="mb-5"><a href="mailto:prsousa730@gmail.com" class="email-link">prsousa730@gmail.com<i class="bi bi-arrow-up-right text-muted fs-4"></i></a></div><div class="d-flex justify-content-center gap-4"><a href="https://www.linkedin.com/in/pablo-sousa" target="_blank" class="text-muted text-decoration-none"><i class="bi bi-linkedin me-2"></i>LinkedIn</a><span class="text-muted">|</span><span class="text-muted"><i class="bi bi-globe me-2"></i>Remote (Worldwide)</span></div></div></div></section><footer class="footer-modern text-center"><div class="container"><p class="mb-0">© 2026 Pablo Sousa.<span data-i18n="footer_text">All rights reserved.</span></p></div></footer><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script><script>const translations = {
-        en: {
-            nav_home: "Home", nav_skills: "Skills", nav_education: "Education", nav_diffs: "Features", nav_contact: "Contact",
-            exp_years: "16 YEARS OF EXPERIENCE",
-            banner_title: "Software & <br><span class='text-gradient'>Computer Engineer.</span>",
-            banner_intro: "Hi, I'm <span class='text-white fw-semibold'>Pablo</span>. I've spent the last 16 years solving real problems through technology. My job is to ensure everything works, from <span class='text-white'>cloud infrastructure</span> to the code that touches the hardware. ",
-            btn_hire: "Start Project <i class='bi bi-arrow-right ms-2'></i>",
-            btn_stack: "View Stack",
-            val_security: "Priority Security", val_seriousness: "Executive Seriousness", val_excellence: "Technical Excellence", val_commitment: "Real Commitment",
-            skills_title: "Technical Arsenal.",
-            skill_hard_title: "Engineering & Quantum",
-            skill_badge_termo: "Thermodynamics", skill_badge_eletro: "Electronics", skill_badge_quant: "Quantum Algorithms",
-            acad_title: "Education & <span class='text-gold'>Milestones.</span>",
-            acad_subtitle: "Recognized academic excellence and continuous research.",
-            acad_eng_title: "Computer Engineering", acad_eng_sub: "Bachelor's Degree", acad_eng_desc: "Absolute mastery from hardware to highly complex software architectures.",
-            acad_quant_title: "Quantum Computing", acad_quant_sub: "Postgraduate & Research", acad_quant_desc: "Exploring new paradigms of processing and computational physics.",
-            diffs_title: "Strategic Features.",
-            diff_1: "Infrastructure as code and full automation", diff_2: "Scalable, monitored, and audited systems", diff_3: "Agile cooperation between teams (DevOps/Business)", diff_5: "From transistors to high-level systems", diff_6: "Clean Code, SOLID, and Clean Architecture", diff_7: "Advanced security: Spring & Kafka Security", diff_8: "Quality assurance: TDD, DDD, JUnit", diff_9: "International ETH Certification standard",
-            contact_title: "Let's build something great.", contact_lead: "Ready to elevate the level of your next technological project.", footer_text: "All rights reserved."
-        },
-        pt: {
-            nav_home: "Início", nav_skills: "Skills", nav_education: "Formação", nav_diffs: "Diferenciais", nav_contact: "Contato",
-            exp_years: "16 ANOS DE EXPERIÊNCIA",
-            banner_title: "Engenheiro de <br><span class='text-gradient'>Software & Computação.</span>",
-            banner_intro: "Oi, eu sou o <span class='text-white fw-semibold'>Pablo</span>. Passei os últimos 16 anos resolvendo problemas reais através da tecnologia. Meu trabalho é garantir que tudo funcione, desde a <span class='text-white'>infraestrutura na nuvem</span> até o código que toca o hardware.</span>.",
-            btn_hire: "Iniciar Projeto <i class='bi bi-arrow-right ms-2'></i>",
-            btn_stack: "Ver Stack",
-            val_security: "Segurança Prioritária", val_seriousness: "Seriedade Executiva", val_excellence: "Excelência Técnica", val_commitment: "Compromisso Real",
-            skills_title: "Arsenal Técnico.",
-            skill_hard_title: "Engenharia & Quântica",
-            skill_badge_termo: "Termodinâmica", skill_badge_eletro: "Eletrônica", skill_badge_quant: "Algoritmos Quânticos",
-            acad_title: "Formação & <span class='text-gold'>Marcos.</span>",
-            acad_subtitle: "Excelência acadêmica reconhecida e pesquisa contínua.",
-            acad_eng_title: "Engenharia da Computação", acad_eng_sub: "Bacharelado Pleno", acad_eng_desc: "Domínio absoluto do hardware às arquiteturas de software de alta complexidade.",
-            acad_quant_title: "Computação Quântica", acad_quant_sub: "Pós-Graduação & Pesquisa", acad_quant_desc: "Explorando novos paradigmas de processamento e física computacional.",
-            diffs_title: "Diferenciais Estratégicos.",
-            diff_1: "Infraestrutura como código e automação total", diff_2: "Sistemas escaláveis, monitorados e auditados", diff_3: "Cooperação ágil entre times (DevOps/Business)", diff_5: "Do transistor aos sistemas de alto nível", diff_6: "Clean Code, SOLID e Clean Architecture", diff_7: "Segurança avançada: Spring & Kafka Security", diff_8: "Garantia de qualidade: TDD, DDD, JUnit", diff_9: "Padrão de Certificação Internacional ETH",
-            contact_title: "Vamos construir algo incrível.", contact_lead: "Pronto para elevar o nível do seu próximo projeto tecnológico.", footer_text: "Todos os direitos reservados."
-        }
-    };
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pablo Sousa / Software Engineer</title>
+<meta name="description" content="Software Engineer. Java backend, distributed systems, Kafka, Spring Boot, AWS, DevOps. Computer Engineering. Postgraduate in Quantum Computing.">
 
-    let currentLang = 'en';
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    document.getElementById('lang-toggle').addEventListener('click', () => {
-        currentLang = currentLang === 'en' ? 'pt' : 'en';
-        
-        document.querySelectorAll('[data-i18n]').forEach(element => {
-            const key = element.getAttribute('data-i18n');
-            if(translations[currentLang][key]) {
-                element.innerHTML = translations[currentLang][key];
-            }
-        });
-    });</script></body></html>
+<style>
+:root{
+  --bg:#13141b;
+  --bg-alt:#171922;
+  --surface:#1b1d27;
+  --border:#282b37;
+  --border-soft:#21232d;
+  --text:#c5ccda;
+  --strong:#eef2f9;
+  --muted:#7d8598;
+  --faint:#565e70;
+  --accent:#7aa2f7;
+  --green:#9ece6a;
+  --amber:#e0af68;
+  --sans:'IBM Plex Sans',system-ui,-apple-system,sans-serif;
+  --mono:'IBM Plex Mono','SFMono-Regular',Menlo,monospace;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);
+  background:var(--bg);
+  color:var(--text);
+  font-size:16px;
+  line-height:1.65;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:rgba(122,162,247,.28);color:var(--strong)}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+
+/* ============ NAV ============ */
+nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(19,20,27,.86);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border-soft);
+}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:20px;height:58px}
+.brand{font-family:var(--mono);font-size:14px;font-weight:500;color:var(--strong);letter-spacing:-.2px;white-space:nowrap}
+.brand b{color:var(--accent);font-weight:500}
+.nav-right{display:flex;align-items:center;gap:22px;min-width:0}
+.nav-links{display:flex;gap:20px;list-style:none;overflow-x:auto;scrollbar-width:none}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{
+  font-family:var(--mono);font-size:12.5px;color:var(--muted);
+  white-space:nowrap;transition:color .15s;
+}
+.nav-links a:hover{color:var(--strong)}
+.lang{display:flex;border:1px solid var(--border);border-radius:3px;overflow:hidden;flex-shrink:0}
+.lang button{
+  font-family:var(--mono);font-size:11px;letter-spacing:.04em;
+  background:transparent;border:0;color:var(--faint);
+  padding:4px 9px;cursor:pointer;transition:all .15s;
+}
+.lang button:hover{color:var(--text)}
+.lang button.on{background:var(--surface);color:var(--accent)}
+
+/* ============ HERO ============ */
+.hero{padding:78px 0 70px;border-bottom:1px solid var(--border-soft)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:56px;align-items:start}
+.role-line{
+  font-family:var(--mono);font-size:12.5px;color:var(--accent);
+  letter-spacing:.02em;margin-bottom:18px;
+}
+.role-line i{color:var(--faint);font-style:normal;margin:0 7px}
+h1{
+  font-size:clamp(40px,6.4vw,66px);
+  font-weight:600;letter-spacing:-.035em;line-height:1.02;
+  color:var(--strong);margin-bottom:22px;
+}
+.lede{font-size:17px;color:var(--text);max-width:600px;font-weight:300;line-height:1.7}
+.lede b{color:var(--strong);font-weight:500}
+.hero-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.hl{
+  font-family:var(--mono);font-size:12px;color:var(--muted);
+  border:1px solid var(--border);border-radius:3px;
+  padding:6px 11px;transition:all .15s;
+}
+.hl:hover{color:var(--strong);border-color:#3b4152;background:var(--surface)}
+
+/* ficha */
+.facts{border:1px solid var(--border);border-radius:4px;background:var(--bg-alt);overflow:hidden}
+.facts-h{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--faint);padding:11px 15px;border-bottom:1px solid var(--border-soft);
+  background:var(--surface);
+}
+.fact{padding:11px 15px;border-bottom:1px solid var(--border-soft)}
+.fact:last-child{border-bottom:0}
+.fact .k{
+  display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--faint);margin-bottom:3px;
+}
+.fact .v{font-size:13.5px;color:var(--text);line-height:1.5}
+
+/* ============ SECTIONS ============ */
+section.blk{padding:64px 0;border-bottom:1px solid var(--border-soft);scroll-margin-top:58px}
+.s-title{
+  font-family:var(--mono);font-size:13px;font-weight:500;
+  letter-spacing:.02em;color:var(--strong);margin-bottom:26px;
+}
+.s-title .h{color:var(--accent);margin-right:2px}
+
+/* ============ STACK ============ */
+.spec{border-top:1px solid var(--border)}
+.spec-row{
+  display:grid;grid-template-columns:132px minmax(0,1fr);gap:20px;
+  padding:13px 10px 13px 0;border-bottom:1px solid var(--border);
+  transition:background .15s;
+}
+.spec-row:hover{background:rgba(255,255,255,.018)}
+.spec-k{
+  font-family:var(--mono);font-size:11px;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--faint);padding-top:2px;
+}
+.spec-row:hover .spec-k{color:var(--accent)}
+.spec-v{font-family:var(--mono);font-size:13.5px;color:var(--text);line-height:1.85;word-spacing:1px}
+.spec-v em{color:var(--faint);font-style:normal}
+
+/* ============ WORK ============ */
+.job{
+  display:grid;grid-template-columns:148px minmax(0,1fr);gap:26px;
+  padding:26px 0;border-bottom:1px solid var(--border);
+}
+.job:first-of-type{border-top:1px solid var(--border)}
+.job-per{font-family:var(--mono);font-size:12px;color:var(--muted);padding-top:3px;white-space:nowrap}
+.job-per::before{
+  content:"";display:inline-block;width:5px;height:5px;background:var(--faint);
+  margin-right:9px;vertical-align:middle;transition:background .15s;
+}
+.job:hover .job-per::before{background:var(--amber)}
+.job.now .job-per{color:var(--amber)}
+.job.now .job-per::before{background:var(--amber)}
+.job-role{font-size:17px;font-weight:500;color:var(--strong);margin-bottom:9px;letter-spacing:-.01em}
+.job-txt{font-size:14.5px;color:var(--text);font-weight:300;line-height:1.72;max-width:660px}
+.tech{margin-top:13px;font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.8}
+.tech b{color:var(--faint);font-weight:400;letter-spacing:.06em;text-transform:uppercase;font-size:10.5px;margin-right:9px}
+
+/* ============ EDUCATION ============ */
+.edu{display:grid;grid-template-columns:148px minmax(0,1fr);gap:26px;padding:24px 0;border-bottom:1px solid var(--border)}
+.edu:first-of-type{border-top:1px solid var(--border)}
+.edu-y{font-family:var(--mono);font-size:12px;color:var(--muted);padding-top:3px}
+.edu-t{font-size:16.5px;font-weight:500;color:var(--strong);margin-bottom:2px;letter-spacing:-.01em}
+.edu-i{font-family:var(--mono);font-size:12px;color:var(--accent);margin-bottom:10px}
+.edu-x{font-size:14.5px;color:var(--text);font-weight:300;line-height:1.7;max-width:640px}
+.tag{
+  display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--green);border:1px solid rgba(158,206,106,.3);
+  border-radius:2px;padding:2px 7px;margin-left:9px;vertical-align:middle;
+}
+
+/* ============ CERTS ============ */
+.certs{list-style:none;border-top:1px solid var(--border)}
+.certs li{
+  display:flex;justify-content:space-between;align-items:baseline;gap:18px;
+  padding:11px 0;border-bottom:1px solid var(--border);font-size:14px;
+}
+.certs .n{color:var(--text);font-weight:300}
+.certs .o{font-family:var(--mono);font-size:11.5px;color:var(--faint);white-space:nowrap}
+
+/* ============ CONTACT ============ */
+.contact{padding:72px 0 66px}
+.c-h{font-size:clamp(24px,3.6vw,34px);font-weight:500;color:var(--strong);letter-spacing:-.025em;margin-bottom:12px}
+.c-p{font-size:15.5px;color:var(--muted);font-weight:300;max-width:520px;margin-bottom:30px}
+.mail{display:flex;align-items:center;flex-wrap:wrap;gap:14px;padding:18px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.mail a{
+  font-family:var(--mono);font-size:clamp(14px,2.2vw,19px);color:var(--strong);
+  border-bottom:1px solid transparent;transition:all .15s;padding-bottom:2px;
+}
+.mail a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+.cp{
+  font-family:var(--mono);font-size:11px;color:var(--faint);background:var(--surface);
+  border:1px solid var(--border);border-radius:3px;padding:5px 11px;cursor:pointer;transition:all .15s;
+}
+.cp:hover{color:var(--strong);border-color:#3b4152}
+.cp.ok{color:var(--green);border-color:rgba(158,206,106,.4)}
+.links{display:flex;flex-wrap:wrap;gap:24px;margin-top:22px}
+.links a{font-family:var(--mono);font-size:12.5px;color:var(--muted);transition:color .15s}
+.links a:hover{color:var(--accent)}
+.links a::before{content:"/ ";color:var(--faint)}
+
+footer{padding:26px 0 34px;border-top:1px solid var(--border-soft)}
+.f-in{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.f-in div{font-family:var(--mono);font-size:11.5px;color:var(--faint)}
+
+@media(max-width:880px){
+  .hero-grid{grid-template-columns:1fr;gap:38px}
+  .hero{padding:54px 0 52px}
+}
+@media(max-width:680px){
+  .nav-right{gap:14px}
+  .spec-row,.job,.edu{grid-template-columns:1fr;gap:9px}
+  .spec-k{padding-top:0}
+  .job-per,.edu-y{padding-top:0}
+  section.blk{padding:46px 0}
+  .certs li{flex-direction:column;gap:3px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-in">
+    <a href="#top" class="brand"><b>~</b>/pablo.sousa</a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#stack" data-i18n="nav_stack">stack</a></li>
+        <li><a href="#work" data-i18n="nav_work">experience</a></li>
+        <li><a href="#education" data-i18n="nav_edu">education</a></li>
+        <li><a href="#certs" data-i18n="nav_certs">certifications</a></li>
+        <li><a href="#contact" data-i18n="nav_contact">contact</a></li>
+      </ul>
+      <div class="lang">
+        <button id="bEn" class="on">EN</button>
+        <button id="bPt">PT</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="role-line">
+        software engineer<i>/</i>java backend<i>/</i>distributed systems
+      </div>
+      <h1>Pablo Sousa</h1>
+      <p class="lede" data-i18n="lede">
+        Distributed systems in <b>Java, Spring Boot and Kafka</b>. I like understanding how things work underneath, finding root causes, and improving performance, scalability and maintainability. Background in Computer Engineering, with a postgraduate degree in Quantum Computing and published research on quantum security.
+      </p>
+      <div class="hero-links">
+        <a class="hl" href="mailto:pablofroz@hotmail.com.br">pablofroz@hotmail.com.br</a>
+        <a class="hl" href="https://www.linkedin.com/in/pablo-sousa" target="_blank" rel="noopener">linkedin</a>
+        <a class="hl" href="https://github.com/pablosousa7" target="_blank" rel="noopener">github</a>
+        <a class="hl" href="https://pablosousa7.github.io/pablo-sousa-portfolio/" target="_blank" rel="noopener">portfolio</a>
+      </div>
+    </div>
+
+    <aside class="facts">
+      <div class="facts-h" data-i18n="facts_h">overview</div>
+      <div class="fact">
+        <span class="k" data-i18n="f_loc">location</span>
+        <span class="v" data-i18n="f_loc_v">Uberlândia, Brazil (remote)</span>
+      </div>
+      <div class="fact">
+        <span class="k" data-i18n="f_lang">languages</span>
+        <span class="v" data-i18n="f_lang_v">Portuguese (native) · English (B2)</span>
+      </div>
+      <div class="fact">
+        <span class="k" data-i18n="f_focus">focus</span>
+        <span class="v" data-i18n="f_focus_v">distributed systems · quantum computing</span>
+      </div>
+    </aside>
+  </div>
+</header>
+
+<section class="blk" id="stack">
+  <div class="wrap">
+    <h2 class="s-title"><span class="h">#</span><span data-i18n="sec_stack">stack</span></h2>
+    <div class="spec">
+
+      <div class="spec-row">
+        <div class="spec-k" data-i18n="s_backend">backend</div>
+        <div class="spec-v">Java · Spring Boot · Quarkus · Jakarta EE · EJB · JPA · REST APIs · Microservices · Node.js · C# · PHP</div>
+      </div>
+
+      <div class="spec-row">
+        <div class="spec-k" data-i18n="s_frontend">frontend</div>
+        <div class="spec-v">React · Next.js · Vite · Angular · TypeScript · JavaScript · HTML5 · CSS3</div>
+      </div>
+
+      <div class="spec-row">
+        <div class="spec-k" data-i18n="s_mobile">mobile</div>
+        <div class="spec-v">Flutter · Kotlin</div>
+      </div>
+
+      <div class="spec-row">
+        <div class="spec-k" data-i18n="s_cloud">cloud</div>
+        <div class="spec-v">AWS <em>(</em>EC2 · EKS · S3 · RDS · IAM · SQS · SNS<em>)</em> · OCI · GCP</div>
+      </div>
+
+      <div class="spec-row">
+        <div class="spec-k">devops</div>
+        <div class="spec-v">Docker · Kubernetes · OpenShift · Terraform · Jenkins · Linux · Git</div>
+      </div>
+
+      <div class="spec-row">
+        <div class="spec-k" data-i18n="s_messaging">messaging</div>
+        <div class="spec-v">Apache Kafka</div>
+      </div>
+
+      <div class="spec-row">
+        <div class="spec-k" data-i18n="s_data">databases</div>
+        <div class="spec-v">PostgreSQL · MySQL · MariaDB · MongoDB · OCI</div>
+      </div>
+
+      <div class="spec-row">
+        <div class="spec-k" data-i18n="s_practices">practices</div>
+        <div class="spec-v">Clean Architecture · DDD · SOLID · TDD · Code Review · Scrum · Kanban</div>
+      </div>
+
+      <div class="spec-row">
+        <div class="spec-k" data-i18n="s_quantum">quantum</div>
+        <div class="spec-v">Qbit · IBM Quantum · Azure Quantum · <span data-i18n="s_quantum_v">algorithms · logic · simulation</span></div>
+      </div>
+
+      <div class="spec-row">
+        <div class="spec-k" data-i18n="s_hardware">engineering</div>
+        <div class="spec-v">C++ · Raspberry Pi · Arduino · <span data-i18n="s_hardware_v">embedded systems · electronics</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="work">
+  <div class="wrap">
+    <h2 class="s-title"><span class="h">#</span><span data-i18n="sec_work">experience</span></h2>
+
+    <div class="job now">
+      <div class="job-per" data-i18n="w1_per">2026 / present</div>
+      <div>
+        <div class="job-role" data-i18n="w1_role">Senior Software Engineer</div>
+        <p class="job-txt" data-i18n="w1_txt">
+          Development and maintenance of enterprise applications and legacy systems. Code review and quality assurance focused on reliability. Continuous refactoring and optimization to improve application performance and system stability, working alongside multidisciplinary teams.
+        </p>
+        <div class="tech"><b>stack</b>React · Next.js · Node.js · TypeScript · JavaScript · OCI · MySQL</div>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-per">2022 / 2025</div>
+      <div>
+        <div class="job-role" data-i18n="w2_role">Senior Software Engineer</div>
+        <p class="job-txt" data-i18n="w2_txt">
+          Designed and built microservices in Java with Spring Boot and Quarkus, integrating distributed systems and third-party services. Refactored legacy applications to improve scalability and maintainability. Took part in architecture discussions and technical decisions, with production support on Kubernetes, log analysis and root cause investigation. For a period, acted as technical lead: code review, technical direction and support on agile practices.
+        </p>
+        <div class="tech"><b>stack</b>Java · Spring Boot · Quarkus · Kafka · Docker · Kubernetes · AWS · Terraform · Jenkins · PostgreSQL · MongoDB</div>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-per">2018 / 2022</div>
+      <div>
+        <div class="job-role" data-i18n="w3_role">Senior Software Engineer</div>
+        <p class="job-txt" data-i18n="w3_txt">
+          Led the development of corporate web applications from design to production. Coordinated technical activities, organized team priorities, reviewed code and mentored developers. Introduced agile practices, migrated legacy systems to modern architectures and built per-brand microservices with focus on modularity, security and integration.
+        </p>
+        <div class="tech"><b>stack</b>Java · Spring Boot · Kafka · Angular · Flutter · Docker · Kubernetes · AWS · PostgreSQL</div>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-per">2011 / 2017</div>
+      <div>
+        <div class="job-role" data-i18n="w4_role">Independent Projects &amp; Freelance</div>
+        <p class="job-txt" data-i18n="w4_txt">
+          Web development and systems integration for small businesses and direct clients. Websites, internal tools and custom PHP/JavaScript applications. First hands-on contact with software engineering end-to-end, from requirements to deployment and support.
+        </p>
+        <div class="tech"><b>stack</b>PHP · jQuery · JavaScript · HTML · CSS · MySQL · Linux</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="blk" id="education">
+  <div class="wrap">
+    <h2 class="s-title"><span class="h">#</span><span data-i18n="sec_edu">education</span></h2>
+
+    <div class="edu">
+      <div class="edu-y" data-i18n="e1_y">postgraduate</div>
+      <div>
+        <div class="edu-t"><span data-i18n="e1_t">Quantum Computing</span><span class="tag" data-i18n="e1_tag">completed</span></div>
+        <div class="edu-i">Centro Universitário UNA</div>
+        <p class="edu-x" data-i18n="e1_x">
+          Physical engineering foundations applied to quantum computing: algorithms, logic and simulation. Published research on quantum security.
+        </p>
+        <div class="tech"><b>stack</b>Qbit · IBM Quantum · Azure Quantum</div>
+      </div>
+    </div>
+
+    <div class="edu">
+      <div class="edu-y">2016 / 2022</div>
+      <div>
+        <div class="edu-t"><span data-i18n="e2_t">Computer Engineering</span><span class="tag" data-i18n="e2_tag">completed</span></div>
+        <div class="edu-i" data-i18n="e2_i">Faculdade Pitágoras · Bachelor's degree</div>
+        <p class="edu-x" data-i18n="e2_x">
+          Software engineering, embedded systems, automation, computer architecture and electronics.
+        </p>
+        <div class="tech"><b>stack</b>C++ · C# · Java · Raspberry Pi · Arduino</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="blk" id="certs">
+  <div class="wrap">
+    <h2 class="s-title"><span class="h">#</span><span data-i18n="sec_certs">certifications</span></h2>
+    <ul class="certs">
+      <li><span class="n">Java Foundations Professional Certificate</span><span class="o">JetBrains</span></li>
+      <li><span class="n">Java Essential Training: Objects and APIs</span><span class="o">LinkedIn Learning</span></li>
+      <li><span class="n">Docker Foundations Professional Certificate</span><span class="o">Docker</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2 class="c-h" data-i18n="c_h">Contact</h2>
+    <p class="c-p" data-i18n="c_p">Open to remote international opportunities. Email or LinkedIn, both work.</p>
+
+    <div class="mail">
+      <a href="mailto:pablofroz@hotmail.com.br">pablofroz@hotmail.com.br</a>
+      <button class="cp" id="cpBtn" data-i18n="cp">copy</button>
+    </div>
+
+    <div class="links">
+      <a href="https://www.linkedin.com/in/pablo-sousa" target="_blank" rel="noopener">linkedin.com/in/pablo-sousa</a>
+      <a href="https://github.com/pablosousa7" target="_blank" rel="noopener">github.com/pablosousa7</a>
+      <a href="https://pablosousa7.github.io/pablo-sousa-portfolio/" target="_blank" rel="noopener">pablosousa7.github.io</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap f-in">
+    <div>© 2026 Pablo Sousa</div>
+    <div id="upd"></div>
+  </div>
+</footer>
+
+<script>
+const T = {
+  en:{
+    nav_stack:"stack",nav_work:"experience",nav_edu:"education",nav_certs:"certifications",nav_contact:"contact",
+    facts_h:"overview",
+    lede:"Distributed systems in <b>Java, Spring Boot and Kafka</b>. I like understanding how things work underneath, finding root causes, and improving performance, scalability and maintainability. Background in Computer Engineering, with a postgraduate degree in Quantum Computing and published research on quantum security.",
+    f_loc:"location",f_loc_v:"Uberlândia, Brazil (remote)",
+    f_lang:"languages",f_lang_v:"Portuguese (native) · English (B2)",
+    f_focus:"focus",f_focus_v:"distributed systems · quantum computing",
+    sec_stack:"stack",
+    s_backend:"backend",s_frontend:"frontend",s_mobile:"mobile",s_cloud:"cloud",
+    s_messaging:"messaging",s_data:"databases",s_practices:"practices",s_quantum:"quantum",
+    s_quantum_v:"algorithms · logic · simulation",s_hardware:"engineering",s_hardware_v:"embedded systems · electronics",
+    sec_work:"experience",
+    w1_per:"2026 / present",w1_role:"Senior Software Engineer",
+    w1_txt:"Development and maintenance of enterprise applications and legacy systems. Code review and quality assurance focused on reliability. Continuous refactoring and optimization to improve application performance and system stability, working alongside multidisciplinary teams.",
+    w2_role:"Senior Software Engineer",
+    w2_txt:"Designed and built microservices in Java with Spring Boot and Quarkus, integrating distributed systems and third-party services. Refactored legacy applications to improve scalability and maintainability. Took part in architecture discussions and technical decisions, with production support on Kubernetes, log analysis and root cause investigation. For a period, acted as technical lead: code review, technical direction and support on agile practices.",
+    w3_role:"Senior Software Engineer",
+    w3_txt:"Led the development of corporate web applications from design to production. Coordinated technical activities, organized team priorities, reviewed code and mentored developers. Introduced agile practices, migrated legacy systems to modern architectures and built per-brand microservices with focus on modularity, security and integration.",
+    w4_role:"Independent Projects & Freelance",
+    w4_txt:"Web development and systems integration for small businesses and direct clients. Websites, internal tools and custom PHP/JavaScript applications. First hands-on contact with software engineering end-to-end, from requirements to deployment and support.",
+    sec_edu:"education",
+    e1_y:"postgraduate",e1_t:"Quantum Computing",e1_tag:"completed",
+    e1_x:"Physical engineering foundations applied to quantum computing: algorithms, logic and simulation. Published research on quantum security.",
+    e2_t:"Computer Engineering",e2_tag:"completed",e2_i:"Faculdade Pitágoras · Bachelor's degree",
+    e2_x:"Software engineering, embedded systems, automation, computer architecture and electronics.",
+    sec_certs:"certifications",
+    c_h:"Contact",c_p:"Open to remote international opportunities. Email or LinkedIn, both work.",
+    cp:"copy",cp_ok:"copied",upd:"updated Oct 2026"
+  },
+  pt:{
+    nav_stack:"stack",nav_work:"experiência",nav_edu:"formação",nav_certs:"certificações",nav_contact:"contato",
+    facts_h:"resumo",
+    lede:"Sistemas distribuídos em <b>Java, Spring Boot e Kafka</b>. Gosto de entender como as coisas funcionam por baixo, encontrar a causa raiz dos problemas e melhorar desempenho, escalabilidade e manutenibilidade. Formação em Engenharia da Computação, com pós-graduação em Computação Quântica e pesquisa publicada em segurança quântica.",
+    f_loc:"localização",f_loc_v:"Uberlândia, MG (remoto)",
+    f_lang:"idiomas",f_lang_v:"Português (nativo) · Inglês (B2)",
+    f_focus:"foco",f_focus_v:"sistemas distribuídos · computação quântica",
+    sec_stack:"stack",
+    s_backend:"backend",s_frontend:"frontend",s_mobile:"mobile",s_cloud:"nuvem",
+    s_messaging:"mensageria",s_data:"bancos de dados",s_practices:"práticas",s_quantum:"quântica",
+    s_quantum_v:"algoritmos · lógica · simulação",s_hardware:"engenharia",s_hardware_v:"sistemas embarcados · eletrônica",
+    sec_work:"experiência",
+    w1_per:"2026 / atual",w1_role:"Engenheiro de Software Sênior",
+    w1_txt:"Desenvolvimento e manutenção de aplicações corporativas e sistemas legados. Revisão de código e garantia de qualidade com foco em confiabilidade. Refatoração e otimização contínuas para melhorar o desempenho das aplicações e a estabilidade dos sistemas, em conjunto com equipes multidisciplinares.",
+    w2_role:"Engenheiro de Software Sênior",
+    w2_txt:"Projetei e desenvolvi microsserviços em Java com Spring Boot e Quarkus, integrando sistemas distribuídos e serviços de terceiros. Refatorei aplicações legadas para melhorar escalabilidade e manutenibilidade. Participei de discussões de arquitetura e de decisões técnicas, com sustentação em produção no Kubernetes, análise de logs e investigação de causa raiz. Durante um período, atuei como líder técnico: revisão de código, direcionamento técnico e apoio às práticas ágeis.",
+    w3_role:"Engenheiro de Software Sênior",
+    w3_txt:"Liderei o desenvolvimento de aplicações web corporativas, da concepção à produção. Coordenei atividades técnicas, organizei as prioridades do time, revisei código e orientei desenvolvedores. Implantei práticas ágeis, migrei sistemas legados para arquiteturas modernas e desenvolvi microsserviços por marca, com foco em modularidade, segurança e integração.",
+    w4_role:"Projetos Independentes e Freelance",
+    w4_txt:"Desenvolvimento web e integração de sistemas para pequenas empresas e clientes diretos. Sites, ferramentas internas e aplicações customizadas em PHP e JavaScript. Primeiro contato prático com engenharia de software ponta a ponta, de requisitos a deploy e suporte.",
+    sec_edu:"formação",
+    e1_y:"pós-graduação",e1_t:"Computação Quântica",e1_tag:"concluído",
+    e1_x:"Fundamentos de engenharia física aplicados à computação quântica: algoritmos, lógica e simulação. Pesquisa publicada em segurança quântica.",
+    e2_t:"Engenharia da Computação",e2_tag:"concluído",e2_i:"Faculdade Pitágoras · Bacharelado",
+    e2_x:"Engenharia de software, sistemas embarcados, automação, arquitetura de computadores e eletrônica.",
+    sec_certs:"certificações",
+    c_h:"Contato",c_p:"Aberto a oportunidades internacionais e remotas. Pode chamar por e-mail ou LinkedIn.",
+    cp:"copiar",cp_ok:"copiado",upd:"atualizado em out 2026"
+  }
+};
+
+let lang = 'en';
+const bEn = document.getElementById('bEn');
+const bPt = document.getElementById('bPt');
+
+function apply(l){
+  lang = l;
+  document.documentElement.lang = l;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k = el.getAttribute('data-i18n');
+    if(T[l][k] !== undefined) el.innerHTML = T[l][k];
+  });
+  bEn.classList.toggle('on', l==='en');
+  bPt.classList.toggle('on', l==='pt');
+  document.getElementById('upd').textContent = T[l].upd;
+  document.getElementById('cpBtn').textContent = T[l].cp;
+}
+
+bEn.onclick = ()=>apply('en');
+bPt.onclick = ()=>apply('pt');
+
+document.getElementById('cpBtn').addEventListener('click', function(){
+  const b = this;
+  navigator.clipboard.writeText('pablofroz@hotmail.com.br').then(()=>{
+    b.textContent = T[lang].cp_ok;
+    b.classList.add('ok');
+    setTimeout(()=>{ b.textContent = T[lang].cp; b.classList.remove('ok'); }, 1600);
+  });
+});
+
+document.getElementById('upd').textContent = T.en.upd;
+</script>
+
+</body>
+</html>
